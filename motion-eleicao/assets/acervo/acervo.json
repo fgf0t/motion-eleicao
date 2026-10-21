@@ -1,0 +1,187 @@
+[
+ {
+  "nome": "martelo",
+  "arquivo": "martelo.jpg",
+  "reticula": "ret/martelo.png",
+  "tags": [
+   "martelo",
+   "juiz",
+   "justiça",
+   "tribunal",
+   "julgamento",
+   "júri",
+   "processo",
+   "stj",
+   "stf",
+   "lei",
+   "recurso",
+   "gavel",
+   "court",
+   "judge"
+  ],
+  "autor": "Chris Potter",
+  "licenca": "CC BY 2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:3D_Judges_Gavel.jpg",
+  "titulo": "3D Judges Gavel.jpg",
+  "caixa": null,
+  "uso": "objeto neutro",
+  "conferida": "peças 8 e 9 do 15-motion-debate, out/2026"
+ },
+ {
+  "nome": "cadeado",
+  "arquivo": "cadeado.jpg",
+  "reticula": "ret/cadeado.png",
+  "tags": [
+   "cadeado",
+   "sigilo",
+   "segredo",
+   "fechado",
+   "trancado",
+   "esconder",
+   "bloqueio",
+   "padlock",
+   "lock",
+   "secret"
+  ],
+  "autor": "Shixart1985",
+  "licenca": "CC BY 2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Rusty_padlock_securing_an_old_metal_gate.jpg",
+  "titulo": "Rusty padlock securing an old metal gate.jpg",
+  "caixa": [
+   0.25,
+   0.15,
+   0.85,
+   0.95
+  ],
+  "uso": "objeto neutro",
+  "conferida": "peças 8 e 9 do 15-motion-debate, out/2026"
+ },
+ {
+  "nome": "cartuchos",
+  "arquivo": "cartuchos.jpg",
+  "reticula": "ret/cartuchos.png",
+  "tags": [
+   "cartuchos",
+   "cartucho",
+   "bala",
+   "balas",
+   "munição",
+   "munições",
+   "tiro",
+   "arma",
+   "fuzil",
+   "polícia",
+   "ammunition",
+   "cartridges",
+   "bullet"
+  ],
+  "autor": "TimBomBom1",
+  "licenca": "CC0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Assorted_Cartridges.png",
+  "titulo": "Assorted Cartridges.png",
+  "caixa": null,
+  "uso": "objeto neutro",
+  "conferida": "peças 8 e 9 do 15-motion-debate, out/2026"
+ },
+ {
+  "nome": "urna",
+  "arquivo": "urna.jpg",
+  "reticula": "ret/urna.png",
+  "tags": [
+   "urna",
+   "voto",
+   "votar",
+   "eleição",
+   "eleições",
+   "eleitor",
+   "turno",
+   "tse",
+   "ballot",
+   "vote",
+   "election"
+  ],
+  "autor": "TSE - Tribunal Superior Eleitoral",
+  "licenca": "Public domain",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Urna_eletr%C3%B4nica_brasileira_UE2020.jpg",
+  "titulo": "Urna eletrônica brasileira UE2020.jpg",
+  "caixa": null,
+  "uso": "objeto neutro (urna eletrônica brasileira)",
+  "conferida": "peças 8 e 9 do 15-motion-debate, out/2026"
+ },
+ {
+  "nome": "mapa",
+  "arquivo": "mapa.jpg",
+  "reticula": "ret/mapa.png",
+  "tags": [
+   "mapa",
+   "brasil",
+   "ibge",
+   "estados",
+   "fome",
+   "pobreza",
+   "map",
+   "brazil"
+  ],
+  "autor": "IBGE",
+  "licenca": "Public domain",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Novo_Mapa_do_Brasil_IBGE.jpg",
+  "titulo": "Novo Mapa do Brasil IBGE.jpg",
+  "caixa": null,
+  "uso": "objeto neutro (mapa do Brasil, IBGE)",
+  "conferida": "peças 8 e 9 do 15-motion-debate, out/2026"
+ },
+ {
+  "nome": "plenario",
+  "arquivo": "plenario.jpg",
+  "reticula": "ret/plenario.png",
+  "tags": [
+   "alerj",
+   "assembleia do rio",
+   "assembleia legislativa do rio",
+   "palácio tiradentes",
+   "plenário da alerj",
+   "medalha tiradentes",
+   "acervo:plenario"
+  ],
+  "autor": "Wilfredor",
+  "licenca": "CC0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Chamber_of_the_Pal%C3%A1cio_Tiradentes,_Rio_de_Janeiro.jpg",
+  "titulo": "Chamber of the Palácio Tiradentes, Rio de Janeiro.jpg",
+  "caixa": [
+   0.0,
+   0.05,
+   1.0,
+   0.85
+  ],
+  "uso": "só pauta do Rio de Janeiro (Alerj, Palácio Tiradentes)",
+  "conferida": "peças 8 e 9 do 15-motion-debate, out/2026"
+ },
+ {
+  "nome": "praia",
+  "arquivo": "praia.jpg",
+  "reticula": "ret/praia.png",
+  "tags": [
+   "praia",
+   "praias",
+   "copacabana",
+   "rio de janeiro",
+   "litoral",
+   "mar",
+   "areia",
+   "pec das praias",
+   "beach"
+  ],
+  "autor": "Wilfredor",
+  "licenca": "CC0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Copacabana,_Rio_de_Janeiro.jpg",
+  "titulo": "Copacabana, Rio de Janeiro.jpg",
+  "caixa": [
+   0.3,
+   0.0,
+   1.0,
+   1.0
+  ],
+  "uso": "só pauta do Rio de Janeiro ou de praia (Copacabana)",
+  "conferida": "peças 8 e 9 do 15-motion-debate, out/2026"
+ }
+]
