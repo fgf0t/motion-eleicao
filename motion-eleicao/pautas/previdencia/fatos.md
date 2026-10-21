@@ -16,3 +16,7 @@ Checado em 19 e 20/10/2026 nas fontes acima. Fato pode mudar: confira antes de p
 - Na sabatina do Jornal Nacional (28/08/2026), Flávio disse que não faria economia em cima de aposentados. Imirante, 29/08/2026 (confiança média: trecho de busca): https://m.imirante.com/noticias/brasil/2026/08/29/ipolitica-como-foi-a-entrevista-de-flavio-bolsonaro-na-globo
 - Em ~25/09/2026, Adolfo Sachsida, da coordenação econômica, disse que a equipe "preparou medidas que garantem a continuidade da vinculação entre salário mínimo e benefícios previdenciários". InfoMoney: https://www.infomoney.com.br/politica/campanha-de-flavio-diz-que-vinculacao-entre-salario-minimo-e-previdencia-sera-mantida/
 - Perguntado (SBT News, 19/06/2026) se mexeria nos pisos, na vinculação do mínimo e na Previdência, disse "Não, não pretendo". Jornal de Brasília: https://jornaldebrasilia.com.br/noticias/politica-e-poder/flavio-diz-nao-pretender-atacar-pisos-da-saude-e-educacao-vinculacao-do-minimo-e-previdencia/
+
+## Atualização (21/10/2026)
+
+- Em 13/10/2026 ele recebeu de empresários um plano com aposentadoria aos 67 pra homem e mulher e o piso solto do salário mínimo; a campanha diz que não é posição oficial (Brasil de Fato, 15/10/2026). Ver a pauta `plano-dos-67`.
