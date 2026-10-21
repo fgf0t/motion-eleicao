@@ -1,0 +1,50 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "farmacia popular",
+ "estilo": "pixel",
+ "cenas": [
+  {
+   "fala": "Remédio de pressão, de diabetes e de asma. Sabia que no Farmácia Popular é tudo de graça?",
+   "tela": "Remédio de graça",
+   "icone": "lupa"
+  },
+  {
+   "fala": "Desde fevereiro de 2025, os 41 itens do programa são gratuitos pra toda a população.",
+   "tela": "41 itens",
+   "numero": "41",
+   "detalhe": "remédios, fralda geriátrica e absorvente, grátis desde fev/2025",
+   "fonte": "Ministério da Saúde, fev/2025; CFF, 13/02/2025",
+   "icone": "documento"
+  },
+  {
+   "fala": "Em 2025, foram 27,3 milhões de pessoas atendidas.",
+   "tela": "Atendidos",
+   "numero": "27,3 mi",
+   "detalhe": "pessoas atendidas em 2025",
+   "fonte": "Ministério da Saúde, 12/08/2026",
+   "icone": "pessoa"
+  },
+  {
+   "fala": "O plano do outro candidato não cita o programa. E prevê cortar 190 bilhões em gastos, sem dizer de onde.",
+   "tela": "Fora do plano",
+   "numero": "R$ 190 bi",
+   "carimbo": "não consta no plano",
+   "fonte": "Plano de governo de Flávio Bolsonaro; Gazeta do Povo",
+   "icone": "alerta"
+  },
+  {
+   "fala": "Perguntado se vai mexer no piso da saúde, ele disse que não pretende. E não há fala dele dizendo que acaba com o programa.",
+   "tela": "A versão dele",
+   "citacao": "Não, não pretendo.",
+   "quem": "Flávio Bolsonaro, ao SBT News, 19/06/2026",
+   "ressalva": "Checagem: é falso que ele disse que acabaria com o Farmácia Popular.",
+   "fonte": "Jornal de Brasília, 19/06/2026; TMC, 07/10/2026",
+   "icone": "balanca"
+  },
+  {
+   "fala": "Tá no plano ou não tá? Dia 25, pensa nisso.",
+   "tela": "Tá no plano?",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
