@@ -1,0 +1,38 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "pec das praias",
+ "estilo": "pesquise",
+ "cenas": [
+  {
+   "fala": "Não acredita em mim? Pesquisa.",
+   "tela": "Não acredita em mim.",
+   "foto": "acervo:praia"
+  },
+  {
+   "fala": "Quem foi o relator da PEC das Praias no Senado?",
+   "fonte": "Agência Senado, 2024"
+  },
+  {
+   "fala": "A resposta está nas notícias do próprio Senado.",
+   "tela": "A resposta",
+   "lista": [
+    {
+     "q": "Relator da PEC das Praias no Senado",
+     "a": "Flávio Bolsonaro",
+     "fonte": "Agência Senado, 2024"
+    }
+   ]
+  },
+  {
+   "fala": "E a versão dele é que a praia não seria privatizada.",
+   "tela": "A versão dele",
+   "detalhe": "diz que a praia não seria privatizada",
+   "fonte": "Agência Senado e Poder360"
+  },
+  {
+   "fala": "Pesquisa o que muda com a PEC. Dia 25, vota sabendo.",
+   "tela": "Pes-\nqui-\nsa.",
+   "detalhe": "Dia 25, vota sabendo."
+  }
+ ]
+}
