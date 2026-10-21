@@ -1,0 +1,52 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "desenrola",
+ "estilo": "pixel",
+ "cenas": [
+  {
+   "fala": "Você renegociou alguma dívida no Desenrola? Olha o que dizem os números.",
+   "tela": "Desenrola",
+   "icone": "dinheiro"
+  },
+  {
+   "fala": "No primeiro Desenrola, 15 milhões de pessoas renegociaram 53 bilhões de reais em 12 meses.",
+   "tela": "Renegociado",
+   "numero": "R$ 53 bi",
+   "detalhe": "15,06 milhões de pessoas; desconto médio de 90% à vista",
+   "fonte": "Ministério da Fazenda, maio/2024",
+   "icone": "moedas"
+  },
+  {
+   "fala": "No novo Desenrola, de maio de 2026, os juros são de até 1,99% ao mês, e dá pra usar parte do FGTS.",
+   "fala_voz": "No novo Desenrola, de maio de 2026, os juros são de até 1,99% ao mês, e dá pra usar parte do Fundo de Garantia.",
+   "tela": "Novo Desenrola",
+   "numero": "1,99%",
+   "detalhe": "juros máximos ao mês · apostas online bloqueadas por 1 ano",
+   "fonte": "Agência Brasil, maio/2026",
+   "icone": "cifrao"
+  },
+  {
+   "fala": "Nas primeiras semanas, mais de 1 milhão de pessoas renegociaram quase 12 bilhões.",
+   "tela": "Primeiras semanas",
+   "numero": "R$ 12 bi",
+   "detalhe": "mais de 1 milhão de pessoas",
+   "ressalva": "Não achamos balanço mais recente.",
+   "fonte": "Agência Brasil, maio/2026",
+   "icone": "pessoa"
+  },
+  {
+   "fala": "O senador chamou o programa de paliativo. Disse que é como apagar incêndio com um copo d'água.",
+   "tela": "A versão dele",
+   "citacao": "combater um incêndio usando um copo d'água",
+   "quem": "Flávio Bolsonaro, maio de 2026",
+   "detalhe": "chamou de eleitoreira a liberação do FGTS; não disse que acabaria com o programa",
+   "fonte": "CNN Brasil, blog Débora Bergamasco, 04/05/2026",
+   "icone": "alerta"
+  },
+  {
+   "fala": "Dívida renegociada ou copo d'água? Dia 25, pensa nisso.",
+   "tela": "Pensa nisso.",
+   "detalhe": "Dia 25"
+  }
+ ]
+}
