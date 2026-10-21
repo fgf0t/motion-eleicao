@@ -1,0 +1,46 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "a medalha",
+ "estilo": "vhs",
+ "data_vhs": "08.2005",
+ "cenas": [
+  {
+   "fala": "Ex-capitão da polícia. Para o Ministério Público, um dos chefes do Escritório do Crime, no Rio.",
+   "tela": "Adriano da Nóbrega",
+   "detalhe": "ex-capitão do BOPE · \"Escritório do Crime\" (MP-RJ, 2019)",
+   "fonte": "O Globo, via Congresso em Foco, 22/01/2019"
+  },
+  {
+   "fala": "Em 2005, ele estava preso, acusado de homicídio. Mesmo assim, ganhou a maior medalha da Assembleia do Rio.",
+   "tela": "Medalha Tiradentes",
+   "detalhe": "Alerj, 2005 · proposta em jun/2005, aprovada em ago/2005 · preso desde jan/2004",
+   "carimbo": "preso",
+   "fonte": "Folha e Estadão, via Exame, 25/01/2019",
+   "desenho": "medalha"
+  },
+  {
+   "fala": "Quem propôs a medalha foi um deputado. O mesmo que já tinha homenageado ele em 2003.",
+   "tela": "Flávio Bolsonaro",
+   "detalhe": "deputado estadual em 2003 e 2005 · moção de louvor, out/2003",
+   "foto": "acervo:plenario"
+  },
+  {
+   "fala": "A mãe e a mulher dele trabalharam no gabinete desse deputado. Até 2018.",
+   "tela": "Mãe · Mulher",
+   "detalhe": "saíram do gabinete em 13/11/2018 · versão dele: foram indicação de Fabrício Queiroz",
+   "desenho": "mesa"
+  },
+  {
+   "fala": "Esse deputado agora quer ser presidente. Diz que, na época, aquele homem não era isso.",
+   "tela": "A versão dele",
+   "citacao": "Na época ele não era isso.",
+   "quem": "Flávio Bolsonaro, Jornal Nacional, ago/2026",
+   "fonte": "Jornal Nacional, TV Globo, ago/2026"
+  },
+  {
+   "fala": "Do homicídio, ele foi absolvido em 2007. Mas na época da medalha, estava preso. Dia 25, pensa nisso.",
+   "tela": "Na época,\nele estava preso.",
+   "detalhe": "Absolvido em 2007 · morto numa operação policial na Bahia, em 2020 · Dia 25, pensa nisso."
+  }
+ ]
+}
