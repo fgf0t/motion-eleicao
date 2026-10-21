@@ -1,0 +1,50 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "ir ate 5 mil",
+ "estilo": "pixel",
+ "cenas": [
+  {
+   "fala": "Você parou de pagar Imposto de Renda este ano? E sabe quem paga essa conta?",
+   "tela": "Quem paga a conta?",
+   "icone": "moedas"
+  },
+  {
+   "fala": "Desde janeiro, quem ganha até 5 mil por mês não paga Imposto de Renda. Mais de 10 milhões de pessoas deixaram de pagar.",
+   "tela": "Isenção",
+   "numero": "R$ 5 mil",
+   "detalhe": "10 milhões deixaram de pagar; 5 milhões pagam menos",
+   "fonte": "Lei 15.270/2025; Agência Brasil, 11/2025",
+   "icone": "cifrao"
+  },
+  {
+   "fala": "A conta é paga por um imposto mínimo de até 10% pra quem ganha mais de 50 mil por mês.",
+   "tela": "Quem paga",
+   "numero": "até 10%",
+   "detalhe": "cerca de 140 mil pessoas de renda muito alta",
+   "fonte": "Agência Brasil, 11/2025",
+   "icone": "balanca"
+  },
+  {
+   "fala": "O senador apoiou a isenção. Mas criticou cobrar dos profissionais liberais e propôs emenda que livraria escritórios como o dele.",
+   "tela": "No Senado",
+   "citacao": "isso é um confisco",
+   "quem": "Flávio Bolsonaro, discurso no Senado, 05/11/2025",
+   "fonte": "Senado, pronunciamento de 05/11/2025; SBT News",
+   "icone": "predio"
+  },
+  {
+   "fala": "Como candidato, ele diz que vai compensar sem criar impostos. Mas não diz como.",
+   "tela": "A versão dele",
+   "citacao": "sem precisar aumentar ou criar impostos",
+   "quem": "Flávio Bolsonaro, 15/06/2026",
+   "carimbo": "não diz como",
+   "fonte": "Poder360, 15/06/2026",
+   "icone": "lupa"
+  },
+  {
+   "fala": "Os dois apoiam a isenção. A diferença é quem paga. Dia 25, pensa nisso.",
+   "tela": "Quem paga?",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
