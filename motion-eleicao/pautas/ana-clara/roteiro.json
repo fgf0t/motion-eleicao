@@ -1,0 +1,47 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "caso ana clara",
+ "estilo": "vhs",
+ "data_vhs": "02.02.2021",
+ "cenas": [
+  {
+   "fala": "Ana Clara tinha cinco anos. Brincava na porta de casa, em Niterói.",
+   "tela": "Ana Clara",
+   "detalhe": "02/02/2021 · Monan Pequeno, Niterói",
+   "fonte": "CartaCapital, 19/10/2026"
+  },
+  {
+   "fala": "Levou um tiro de fuzil. Um cabo da PM foi denunciado pelo Ministério Público.",
+   "tela": "Denunciado",
+   "detalhe": "MP-RJ denunciou um cabo da PM",
+   "carimbo": "acusado",
+   "fonte": "CartaCapital, 19/10/2026"
+  },
+  {
+   "fala": "Ele foi mandado a júri popular. Até hoje, não foi julgado.",
+   "tela": "Sem julgamento",
+   "carimbo": "não julgado",
+   "fonte": "CartaCapital, 19/10/2026"
+  },
+  {
+   "fala": "Em 2024, um senador assinou o recurso no STJ pra tirar o acusado do júri. O recurso foi negado.",
+   "tela": "Flávio Bolsonaro",
+   "detalhe": "já senador, hoje candidato a presidente · recurso no STJ, 2024",
+   "carimbo": "negado",
+   "fonte": "CartaCapital, 19/10/2026",
+   "foto": "acervo:martelo"
+  },
+  {
+   "fala": "No debate, perguntado sobre isso, ele respondeu assim.",
+   "tela": "A resposta",
+   "citacao": "Você não pode criminalizar a advocacia, Lula.",
+   "quem": "Flávio Bolsonaro, debate da Band, 18/10/2026",
+   "fonte": "CartaCapital, 19/10/2026"
+  },
+  {
+   "fala": "Ninguém perguntou da advocacia. Perguntou por quê. Dia 25, lembra da Ana Clara.",
+   "tela": "Por quê?",
+   "detalhe": "Dia 25, lembra da Ana Clara."
+  }
+ ]
+}
