@@ -3,6 +3,7 @@
 from montar import br, cabe, esc
 
 GAP, FIM, CAMA, VOL_CAMA = 0.38, 3.4, "dossie", 0.32
+CLIPE_FILTRO = "hue=s=0,eq=contrast=1.35:brightness=-0.03,noise=alls=16:allf=t"  # clipe do Flow vira P&B granulado
 CSS = """
 #mesa-d { position:absolute; inset:-60px; background-color:#1b1611;
   background-image:repeating-linear-gradient(91deg, rgba(255,255,255,.025) 0 2px, transparent 2px 37px), repeating-linear-gradient(89deg, rgba(0,0,0,.25) 0 5px, transparent 5px 61px); }
