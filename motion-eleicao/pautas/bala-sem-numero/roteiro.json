@@ -1,0 +1,49 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "a bala sem numero",
+ "estilo": "vhs",
+ "data_vhs": "16.10.2026",
+ "cenas": [
+  {
+   "fala": "Sabia que toda bala da polícia tem número?",
+   "tela": "A bala tem número",
+   "foto": "acervo:cartuchos"
+  },
+  {
+   "fala": "A lei exige lote e comprador gravados no cartucho. É esse número que diz de onde saiu o tiro.",
+   "tela": "Art. 23",
+   "detalhe": "Lei 10.826/2003 · munição das forças de segurança",
+   "carimbo": "lote e comprador",
+   "fonte": "Lei 10.826/2003, via Termômetro da Política, 19/10/2026"
+  },
+  {
+   "fala": "Um projeto no Senado acaba com essa exigência, sem nenhum rastreio no lugar. Em 2022, o senador defendeu votar na hora.",
+   "tela": "PL 3.723/2019",
+   "detalhe": "CCJ, março de 2022: \"não adianta querer fazer acordo\"",
+   "carimbo": "sem rastreio",
+   "fonte": "Termômetro da Política, 19/10/2026",
+   "manchete": "https://www.termometrodapolitica.com.br/eleicoes/noticia/2026/10/19/entenda-o-papel-de-flavio-bolsonaro-no-projeto-para-remover-marcacao-de-municoes-e-dificultar-investigacoes/"
+  },
+  {
+   "fala": "Na sabatina da Globo, ele chamou isso de detalhezinho.",
+   "tela": "Detalhezinho",
+   "citacao": "Isso é muito maior do que qualquer detalhezinho desse em cima de uma cápsula.",
+   "quem": "Flávio Bolsonaro, sabatina na TV Globo, 16/10/2026",
+   "fonte": "Sabatina na TV Globo, 16/10/2026; Termômetro da Política, 19/10/2026"
+  },
+  {
+   "fala": "No debate, ele disse que nunca quis tirar nada disso. O projeto está parado, sem relator desde 2023.",
+   "tela": "A versão dele",
+   "citacao": "Nunca quis tirar nada disso.",
+   "quem": "Flávio Bolsonaro, debate da Band, 18/10/2026",
+   "detalhe": "projeto parado, sem relator desde 2023",
+   "fonte": "Poder360; Termômetro da Política, 19/10/2026",
+   "manchete": "https://www.poder360.com.br/poder-eleicoes-2026/lula-cobra-rastreamento-de-balas-flavio-questiona-fronteiras/"
+  },
+  {
+   "fala": "Bala sem número não tem dono. Dia 25, lembra disso.",
+   "tela": "Bala sem número\nnão tem dono.",
+   "detalhe": "Dia 25, lembra disso."
+  }
+ ]
+}
