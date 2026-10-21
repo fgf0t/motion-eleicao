@@ -7,7 +7,7 @@ a partir de uma pauta. Você escreve a pauta. A IA confere os fatos e escreve o 
 computador: narração, imagens livres, animação feita em código, trilha, legenda e render.
 
 - **5 estilos:** dossiê, VHS, pesquise, dados e pixel. E dá pra ensinar estilos novos mandando uma referência.
-- **14 pautas** com os fatos já checados e as fontes.
+- **17 pautas** com os fatos já checados e as fontes.
 - **Fonte em todo fato**, na tela. A skill recusa roteiro com número sem fonte e acusação sem condenação.
 - **Voz grátis:** uma voz padrão, ou a sua, clonada no seu computador.
 - **Nenhuma fala cortada:** antes do render a skill ouve cada fala e confere que está inteira.
@@ -91,10 +91,10 @@ Quer mudar alguma coisa? Fale com a IA: "troca a foto da cena 2", "a voz falou A
 
 ### Pautas prontas
 
-A skill traz 14 pautas com os fatos já checados e as fontes (sigilos, mansão e BRB, Copacabana 2012, caso Ana Clara,
+A skill traz 17 pautas com os fatos já checados e as fontes (sigilos, mansão e BRB, Copacabana 2012, caso Ana Clara,
 bala sem número, a medalha, aumentou ou diminuiu, PEC das Praias, Farmácia Popular, IR até 5 mil, escala 6x1,
-Desenrola, Previdência e "nada a esconder"), em `motion-eleicao/pautas/`. Peça "faz um vídeo" sem dizer a pauta e a
-IA te mostra a lista. Os fatos foram checados em 19 e 20/10/2026: confira o `fatos.md` de cada uma antes de postar.
+Desenrola, Previdência, "nada a esconder", Bolsa Família em dois anos, o plano dos 67 e "abre ou não abre"), em `motion-eleicao/pautas/`. Peça "faz um vídeo" sem dizer a pauta e a
+IA te mostra a lista. Os fatos foram checados entre 19 e 21/10/2026: confira o `fatos.md` de cada uma antes de postar.
 
 ### Modo Flow (opcional)
 
