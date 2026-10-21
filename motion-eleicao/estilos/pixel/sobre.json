@@ -4,5 +4,6 @@
  "quando": "explicar dados e regras passo a passo, com linha do tempo ou gráfico",
  "descricao": "Explainer em pixel art sobre fundo grafite: ícones de pixel, número grande, gráfico em degraus, linha do tempo, fonte em verde-água e transição de faixas coloridas em glitch, com sons 8-bit.",
  "status": "pronto",
- "origem": "embutido"
+ "origem": "embutido",
+ "flow": "animação em pixel art 16-bit, poucas cores (fundo grafite, verde-água, amarelo e branco), contorno escuro, câmera parada ou deslizando devagar"
 }

@@ -7,6 +7,9 @@ from montar import br, cabe, esc
 from comum import sem_acento
 
 GAP, FIM, CAMA, VOL_CAMA = 0.55, 3.4, "pixel", 0.16
+VOL_SFX = 0.6  # os bips e moedas ficavam altos demais por cima da fala
+CLIPE_FILTRO = "scale=135:240:flags=area,eq=saturation=1.15,scale=1080:1920:flags=neighbor"  # clipe do Flow vira pixel
+CLIPE_CSS = ".clipe-tela { font:400 64px/1.3 Pixel; text-transform:none; } .clipe-num { font-size:120px; color:#f2c230; } .clipe-fonte { font:400 22px/1.3 Pixel2; }"
 FUNDO, VERDE, AMARELO, VERMELHO, PAPEL = "#2a2a2e", "#3fd6b0", "#f2c230", "#e0464f", "#f4f1e8"
 COR = {"X": "#a8a8b0", "W": PAPEL, "K": FUNDO, "Y": AMARELO, "O": "#e8a33a", "B": "#b7793a", "G": VERDE, "R": VERMELHO, "L": "#5a5a62", "P": PAPEL}
 
