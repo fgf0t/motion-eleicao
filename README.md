@@ -12,7 +12,7 @@ computador: narração, imagens livres, animação feita em código, trilha, leg
 - **Voz grátis:** uma voz padrão, ou a sua, clonada no seu computador.
 - **Nenhuma fala cortada:** antes do render a skill ouve cada fala e confere que está inteira.
 
-**[Veja como funciona, com prints de tudo](https://claude.ai/artifact/BE4Y8FnbGMhuJke3qa8cXG)**
+**[Veja como funciona, com prints de tudo](https://fgf0t.github.io/motion-eleicao/)**
 
 Não funciona no chat do site do Claude (claude.ai): lá a IA não consegue rodar o motor de vídeo no seu computador.
 
@@ -22,7 +22,7 @@ Não funciona no chat do site do Claude (claude.ai): lá a IA não consegue roda
 
 **Jeito mais fácil:** abra o Claude Code (ou o Codex) numa pasta qualquer e escreva:
 
-> instala a skill https://github.com/fgf0t/motion-eleicao
+> Instala pra mim a skill motion-eleicao seguindo esta página: https://fgf0t.github.io/motion-eleicao/
 
 A IA baixa este repositório e roda o instalador. Se aparecer pedido de senha do computador, ela vai pedir pra você
 digitar no Terminal (ela não pode digitar senha por você).
