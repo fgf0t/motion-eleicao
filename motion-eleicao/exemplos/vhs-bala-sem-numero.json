@@ -1,0 +1,29 @@
+{
+ "titulo": "a bala sem numero",
+ "estilo": "vhs",
+ "data_vhs": "19.10.2026",
+ "cenas": [
+  {
+   "fala": "Toda munição das forças de segurança tem que sair de fábrica com número de lote.",
+   "tela": "O número",
+   "detalhe": "art. 23 da Lei 10.826/2003",
+   "fonte": "Lei 10.826/2003 (Estatuto do Desarmamento)",
+   "foto": "acervo:cartuchos"
+  },
+  {
+   "fala": "É esse número que diz de onde veio a bala.",
+   "tela": "De onde veio?"
+  },
+  {
+   "fala": "Um projeto no Senado tira essa exigência, sem pôr nenhum rastreio no lugar.",
+   "tela": "PL 3.723/2019",
+   "carimbo": "sem rastreio",
+   "fonte": "Termômetro da Política, 19/10/2026"
+  },
+  {
+   "fala": "Bala sem número não tem dono.",
+   "tela": "Bala sem número\nnão tem dono.",
+   "detalhe": "Dia 25, lembra disso."
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "titulo": "o que mudou pixel",
+ "estilo": "pixel",
+ "cenas": [
+  {
+   "fala": "O que os números oficiais dizem?",
+   "tela": "O que os números dizem?",
+   "icone": "lupa"
+  },
+  {
+   "fala": "O desemprego fechou 2025 em 5,1%, o menor desde 2012.",
+   "tela": "Desemprego",
+   "numero": "5,1%",
+   "carimbo": "menor desde 2012",
+   "fonte": "IBGE, PNAD Contínua",
+   "bate": "menor",
+   "grade": {
+    "icone": "pessoa",
+    "total": 20,
+    "destaque": 1,
+    "texto": "mais ou menos 1 em cada 20"
+   }
+  },
+  {
+   "fala": "Em 2024, 8,7 milhões de pessoas saíram da pobreza.",
+   "tela": "Pobreza",
+   "numero": "8,7 mi",
+   "detalhe": "saíram da pobreza em um ano",
+   "fonte": "IBGE, Síntese de Indicadores Sociais 2025",
+   "escada": true
+  },
+  {
+   "fala": "Em 2025, o Brasil saiu do Mapa da Fome da ONU. E em 2026 continua fora.",
+   "tela": "Mapa da Fome",
+   "fonte": "ONU/FAO, relatórios SOFI 2025 e 2026",
+   "linha_tempo": [
+    {
+     "ano": "2025",
+     "texto": "saiu do mapa"
+    },
+    {
+     "ano": "2026",
+     "texto": "continua fora"
+    }
+   ]
+  },
+  {
+   "fala": "Não acredita? Pesquisa. Dia 25, vota sabendo.",
+   "tela": "Pesquisa",
+   "detalhe": "Dia 25, vota sabendo."
+  }
+ ]
+}

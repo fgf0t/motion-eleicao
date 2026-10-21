@@ -1,0 +1,48 @@
+{
+ "titulo": "dossie sigilo",
+ "estilo": "dossie",
+ "chapeu": "Debate · Band · 18/10/2026",
+ "cenas": [
+  {
+   "fala": "No debate, o presidente fez um desafio ao adversário: abrir o sigilo bancário e telefônico.",
+   "tela": "O desafio",
+   "detalhe": "sigilo bancário e telefônico",
+   "fonte": "CNN Brasil, 18/10/2026",
+   "foto": "acervo:cadeado"
+  },
+  {
+   "fala": "No dia seguinte, ele assinou a autorização pra abrir o dele e o dos cinco filhos, pra entregar à Justiça Eleitoral.",
+   "tela": "Autorização",
+   "lista": [
+    {
+     "q": "Sigilo bancário",
+     "a": "aberto",
+     "fonte": "@lulaoficial, 19/10/2026"
+    },
+    {
+     "q": "Sigilo telefônico",
+     "a": "aberto",
+     "fonte": "@lulaoficial, 19/10/2026"
+    },
+    {
+     "q": "Dele e dos 5 filhos",
+     "a": "ao TSE",
+     "fonte": "@lulaoficial, 19/10/2026"
+    }
+   ]
+  },
+  {
+   "fala": "O adversário respondeu que não tem nada a esconder. Mas não disse se abre.",
+   "tela": "Não respondeu",
+   "citacao": "Não tenho absolutamente nada a esconder.",
+   "quem": "No debate da Band, 18/10/2026",
+   "carimbo": "não respondeu",
+   "fonte": "CNN Brasil, 18/10/2026"
+  },
+  {
+   "fala": "Quem não deve, não teme.",
+   "tela": "Quem não deve,\nnão teme.",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}

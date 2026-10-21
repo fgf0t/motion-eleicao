@@ -1,0 +1,45 @@
+{
+ "titulo": "quem disse",
+ "estilo": "pesquise",
+ "cenas": [
+  {
+   "fala": "Não acredita em mim? Pesquisa.",
+   "tela": "Não acredita em mim.",
+   "foto": "acervo:urna"
+  },
+  {
+   "fala": "Quem disse que o desemprego é o menor desde 2012?",
+   "fonte": "IBGE, PNAD Contínua"
+  },
+  {
+   "fala": "Quem disse que o Brasil saiu do Mapa da Fome?",
+   "fonte": "ONU/FAO, relatório SOFI 2025"
+  },
+  {
+   "fala": "E a resposta é sempre a mesma.",
+   "tela": "A resposta",
+   "lista": [
+    {
+     "q": "Desemprego de 5,1%, menor desde 2012",
+     "a": "IBGE",
+     "fonte": "PNAD Contínua, 2026"
+    },
+    {
+     "q": "Fora do Mapa da Fome",
+     "a": "ONU",
+     "fonte": "FAO, SOFI 2025"
+    },
+    {
+     "q": "8,7 milhões fora da pobreza em 2024",
+     "a": "IBGE",
+     "fonte": "Síntese de Indicadores Sociais 2025"
+    }
+   ]
+  },
+  {
+   "fala": "Pesquisa. Dia 25, vota sabendo.",
+   "tela": "Pes-\nqui-\nsa.",
+   "detalhe": "Dia 25, vota sabendo."
+  }
+ ]
+}

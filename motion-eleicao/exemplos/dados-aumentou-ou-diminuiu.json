@@ -1,0 +1,46 @@
+{
+ "titulo": "aumentou ou diminuiu",
+ "estilo": "dados",
+ "cenas": [
+  {
+   "fala": "Eu te pergunto: aumentou ou diminuiu?",
+   "tela": "Aumentou ou diminuiu?",
+   "foto": "acervo:urna"
+  },
+  {
+   "fala": "O desemprego fechou 2025 em 5,1%, o menor desde 2012.",
+   "tela": "Desemprego",
+   "numero": "5,1%",
+   "seta": "baixo",
+   "detalhe": "no fim de 2025",
+   "carimbo": "menor desde 2012",
+   "fonte": "IBGE, PNAD Contínua",
+   "bate": "menor"
+  },
+  {
+   "fala": "A pobreza caiu pra 23,1%. Foram 8,7 milhões de pessoas a menos.",
+   "tela": "Pobreza",
+   "numero": "23,1%",
+   "seta": "baixo",
+   "detalhe": "8,7 milhões saíram da pobreza em um ano",
+   "carimbo": "menor desde 2012",
+   "fonte": "IBGE, Síntese de Indicadores Sociais (dados de 2024)"
+  },
+  {
+   "fala": "As mortes violentas caíram pra 19,1 por 100 mil, o menor número desde 2012. Mas o feminicídio subiu.",
+   "tela": "Mortes violentas",
+   "numero": "19,1",
+   "seta": "baixo",
+   "detalhe": "por 100 mil habitantes em 2025",
+   "carimbo": "menor desde 2012",
+   "ressalva": "Mas o feminicídio subiu 4% e as mortes por ação policial subiram 5,4%.",
+   "fonte": "Anuário Brasileiro de Segurança Pública 2026",
+   "bate": "menor"
+  },
+  {
+   "fala": "Não acredita em mim? Pesquisa. Dia 25, vota sabendo.",
+   "tela": "Pes-\nqui-\nsa.",
+   "detalhe": "Dia 25, vota sabendo."
+  }
+ ]
+}
