@@ -1,0 +1,8 @@
+{
+ "nome": "pesquise",
+ "titulo": "Pesquise",
+ "quando": "\"não acredita em mim? pesquisa\", perguntas e respostas",
+ "descricao": "Fundo preto e foto em retícula branca; a pergunta aparece palavra por palavra e a resposta vem numa lista com a fonte de cada item.",
+ "status": "pronto",
+ "origem": "embutido"
+}
