@@ -4,6 +4,7 @@ from montar import br, cabe, esc, carregar_estilo
 pesquise = carregar_estilo("pesquise")
 
 GAP, FIM, CAMA, VOL_CAMA = 0.7, 3.6, "dados", 0.3
+CLIPE_FILTRO = "eq=saturation=0.55:contrast=1.1:brightness=-0.12"  # clipe do Flow fica escuro e frio, atrás dos números
 CSS = pesquise.CSS + """
 .rot9 { position:absolute; left:0; right:0; text-align:center; font:700 40px Maquina; color:#9a9a92; letter-spacing:6px; opacity:0; z-index:20; text-transform:uppercase; }
 .num9 { position:absolute; left:0; right:0; text-align:center; font:900 330px/1 Archivo; font-stretch:72%; color:#f1f1ec; opacity:0; z-index:20; white-space:nowrap; }
