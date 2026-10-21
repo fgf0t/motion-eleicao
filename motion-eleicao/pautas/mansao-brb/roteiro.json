@@ -1,0 +1,40 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "a mansao de brasilia",
+ "estilo": "dados",
+ "cenas": [
+  {
+   "fala": "No debate, o presidente perguntou como o senador comprou uma mansão em Brasília.",
+   "tela": "A mansão"
+  },
+  {
+   "fala": "A casa custou 6 milhões de reais.",
+   "tela": "Lago Sul",
+   "numero": "R$ 6 mi",
+   "detalhe": "casa comprada em 2021, em Brasília",
+   "ressalva": "No debate, o presidente falou em R$ 10 mi. O valor checado é R$ 6 mi.",
+   "fonte": "Aos Fatos, checagem do debate da Band, 18/10/2026"
+  },
+  {
+   "fala": "Desse total, 3,1 milhões foram financiados pelo BRB, o banco de Brasília.",
+   "fala_voz": "Desse total, 3,1 milhões foram financiados pelo Banco de Brasília.",
+   "tela": "BRB",
+   "numero": "R$ 3,1 mi",
+   "detalhe": "financiados pelo Banco de Brasília",
+   "fonte": "Aos Fatos, checagem do debate da Band, 18/10/2026"
+  },
+  {
+   "fala": "E lembrou que os dois ganham o mesmo salário. A checagem confirmou: é verdade.",
+   "tela": "Mesmo salário",
+   "carimbo": "verdadeiro",
+   "ressalva": "A casa não foi paga em dinheiro vivo: teve entrada e financiamento do BRB.",
+   "fonte": "Aos Fatos, checagem do debate da Band, 18/10/2026",
+   "bate": "verdade"
+  },
+  {
+   "fala": "O mesmo salário. Uma casa milionária. A pergunta continua de pé.",
+   "tela": "A pergunta\ncontinua de pé.",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
