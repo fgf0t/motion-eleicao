@@ -81,7 +81,7 @@ def main():
             voz.gerar(r)
         else:
             raise SystemExit(f"PAREI: a fala das cenas {', '.join(str(i + 1) for i in falhas)} continua cortada depois de refazer duas vezes. "
-                             "Escreva a fala de outro jeito (ou use \"fala_voz\") ou troque a voz, e rode de novo. O vídeo não foi renderizado.")
+                             "Escreva a fala de outro jeito (ou use \"fala_voz\") ou troque a voz (cena com \"fala_do_clipe\": gere o clipe de novo no Flow), e rode de novo. O vídeo não foi renderizado.")
         ctx = montar.montar(r)
     if "--sem-render" in sys.argv:
         print(f"\nProjeto montado em {r['_proj']} (sem render)."); return

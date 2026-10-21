@@ -183,10 +183,16 @@ def gerar(r):
             from comum import por_extenso
             texto = por_extenso(texto)  # as vozes neurais erram algarismo ("2012" sai "2020"); por extenso elas acertam
         chave = hashlib.sha1(json.dumps([texto, motor, v.get("voz"), v.get("perfil"), vel]).encode()).hexdigest()[:12]
+        if c.get("fala_do_clipe"):  # a fala já vem dentro do vídeo do Flow: só tira o áudio
+            clipe = os.path.join(r["_pasta"], c["clipe"])
+            chave = hashlib.sha1(json.dumps([texto, "clipe", c["clipe"], os.path.getmtime(clipe)]).encode()).hexdigest()[:12]
         saida, marca = os.path.join(pasta, f"c{i}.wav"), os.path.join(pasta, f"c{i}.chave")
         if os.path.exists(saida) and os.path.exists(marca) and open(marca).read() == chave:
             continue
         print(f"  cena {i + 1}: {texto[:70]}", flush=True)
+        if c.get("fala_do_clipe"):
+            ff("-i", clipe, "-vn", "-ar", str(SR), "-ac", "1", saida)
+            open(marca, "w").write(chave); continue
         if motor == "gemini": faltam.append((texto, saida, marca, chave)); continue
         if motor == "voicestudio":
             fala_voicestudio(texto, saida, v["perfil"], vel)

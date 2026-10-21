@@ -5,7 +5,7 @@
 import importlib, importlib.util, json, os, re, shutil, sys
 import numpy as np
 from PIL import Image
-from comum import SKILL, ASSETS, HYPERFRAMES, ff, ler_roteiro, ler_wav, duracao_wav, passo, aviso, sem_acento
+from comum import SKILL, ASSETS, HYPERFRAMES, ff, ler_roteiro, ler_wav, duracao_wav, duracao_video, passo, aviso, sem_acento
 import reticula, sons
 
 INTRO = 0.55
@@ -189,6 +189,7 @@ class Ctx:
         motor = (self.r.get("voz") or {}).get("motor", "sistema")
         propria = (self.r.get("voz") or {}).get("propria")
         partes.append("Narração com a voz do autor, clonada (IA)." if propria else "Narração com voz sintética (IA).")
+        if any(c.get("clipe") for c in self.cenas): partes.append("Cenas em vídeo geradas com IA (Google Flow).")
         partes.append("Feito com IA. Trilha e sons gerados em código.")
         return " ".join(partes)
 
@@ -245,6 +246,12 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
 .recorte-j .rec-tit { font:400 58px/1.08 "Jornal"; }
 .recorte-j .rec-linha { font:400 28px/1.3 "Archivo"; margin-top:14px; color:#333; }
 .cred-foto { position:absolute; left:40px; right:40px; bottom:22px; text-align:right; font:500 19px/1.2 "Archivo"; color:rgba(240,240,232,.78); text-shadow:0 1px 3px #000, 0 0 8px rgba(0,0,0,.8); opacity:0; z-index:95; }
+.clipe { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; z-index:74; }
+.clipe-sombra { position:absolute; inset:0; z-index:75; opacity:0; background:linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 52%, rgba(0,0,0,.7) 100%); }
+.clipe-tela { position:absolute; left:70px; right:70px; top:230px; text-align:center; font:900 88px/1.02 "Archivo"; color:#fff; text-transform:uppercase; text-shadow:0 4px 20px rgba(0,0,0,.75); opacity:0; z-index:76; }
+.clipe-num { display:block; font-size:150px; color:#ffd84a; margin-top:18px; }
+.clipe-fonte { position:absolute; left:50%; top:1200px; transform:translateX(-50%); max-width:940px; text-align:center; font:600 26px/1.3 "Archivo"; color:#fff; background:rgba(0,0,0,.55); padding:6px 14px; border-radius:6px; opacity:0; z-index:76; }
+.clipe-ia { position:absolute; top:70px; right:50px; font:700 22px "Archivo"; letter-spacing:1px; color:#fff; background:rgba(0,0,0,.6); padding:7px 14px; border-radius:6px; opacity:0; z-index:96; }
 .fim-ass { position:absolute; left:0; right:0; bottom:440px; text-align:center; font:600 30px "Archivo"; letter-spacing:1px; opacity:0; z-index:85; }
 """
 
@@ -323,6 +330,31 @@ def montar(r):
         txt = f'Foto: {c["autor"]}' + (f' ({c["licenca"]})' if c.get("licenca") else "") + (", Wikimedia Commons" if c.get("pagina") else "")
         corpo.append(f'<div class="cred-foto" id="cf{i}">{esc(txt)}</div>')
         js += f'tl.set("#cf{i}", {{ opacity: 1 }}, {max(0, L["t"] - 0.1):.3f}); tl.set("#cf{i}", {{ opacity: 0 }}, {ctx.fim_cena(i):.3f});\n'
+    # cena com "clipe" (vídeo gerado no Flow): o vídeo cobre a cena, com título, fonte e "cena gerada por IA"
+    if any(c.get("clipe") for c in ctx.cenas):  # a legenda de cada estilo tem a própria camada: com clipe, fica sempre por cima
+        corpo.append("<style>.leg { z-index:80 !important; }</style>")
+    for L in ctx.L:
+        c, i = L["c"], L["i"]
+        if not c.get("clipe"): continue
+        os.makedirs(os.path.join(A, "v"), exist_ok=True)
+        origem, saida = os.path.join(r["_pasta"], c["clipe"]), os.path.join(A, "v", f"c{i}.mp4")
+        if not os.path.exists(saida) or os.path.getmtime(saida) < os.path.getmtime(origem):
+            ff("-i", origem, "-an", "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
+               "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-g", "12", "-pix_fmt", "yuv420p", saida)
+        ini, fim = L["t"], ctx.fim_cena(i)
+        resta = duracao_video(saida) - L["s0"] - 0.05  # o vídeo anda junto com a fala (que começa em s0 dentro do clipe)
+        dur = max(0.5, min(fim - ini, resta))
+        corpo.append(f'<video id="vc{i}" class="clipe" src="assets/v/c{i}.mp4" muted playsinline data-start="{ini:.3f}" '
+                     f'data-duration="{dur:.3f}" data-media-start="{L["s0"]:.3f}" data-track-index="{10 + i}"></video>')
+        num = f'<span class="clipe-num">{esc(c["numero"])}</span>' if c.get("numero") else ""
+        corpo.append(f'<div class="clipe-sombra" id="cs{i}"></div><div class="clipe-tela" id="ct{i}">{esc(c.get("tela", ""))}{num}</div>'
+                     f'<div class="clipe-ia" id="ci{i}">cena gerada por IA</div>')
+        ids = [f"#cs{i}", f"#ct{i}", f"#ci{i}"]
+        if c.get("fonte"):
+            corpo.append(f'<div class="clipe-fonte" id="cfo{i}">Fonte: {esc(c["fonte"])}</div>'); ids.append(f"#cfo{i}")
+        for e in ids:
+            js += f'tl.set("{e}", {{ opacity: 1 }}, {ini:.3f}); tl.set("{e}", {{ opacity: 0 }}, {ini + dur:.3f});\n'
+        js += f'tl.fromTo("#ct{i}", {{ y: 30 }}, {{ y: 0, duration: 0.25, ease: st("back.out(2)", 0.25) }}, {ini:.3f});\n'
     for i, m in ctx.manchetes_usadas:
         L = ctx.L[i]
         corpo.append(f'<div class="cred-foto" id="cm{i}">{esc("Reprodução: " + m["veiculo"] + (", " + m["data"] if m.get("data") else ""))}</div>')

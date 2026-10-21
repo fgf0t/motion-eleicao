@@ -1,13 +1,18 @@
 # Confere o roteiro.json antes de gastar tempo com voz e render.
 # Barra o que fere as regras eleitorais (fato sem fonte, acusação sem condenação) e o que quebra a montagem.
 # uso: python3 scripts/validar.py caminho/roteiro.json
-import re, sys
+import os, re, subprocess, sys
 from comum import estilos, ler_roteiro, sem_acento
 
 # palavras que acusam de crime: só com condenação definitiva e a fonte dela em "condenacao"
 ACUSA = ["criminoso", "criminosa", "bandido", "bandida", "ladrao", "ladra", "assassino", "assassina", "corrupto", "corrupta",
          "miliciano", "miliciana", "estuprador", "traficante", "quadrilha", "genocida", "golpista", "estelionatario"]
 CAMPOS_TEXTO = ("fala", "tela", "numero", "detalhe", "carimbo", "citacao", "ressalva")
+
+
+def tem_audio(p):
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", p], capture_output=True, text=True)
+    return bool(r.stdout.strip())
 
 
 def validar(r):
@@ -42,6 +47,13 @@ def validar(r):
             if re.search(rf"\b{p}s?\b", sem_acento(texto)) and not c.get("condenacao"):
                 erros.append(f'cena {i}: usa "{p}". Só pode chamar alguém de criminoso com condenação definitiva; nesse caso ponha a fonte em "condenacao". '
                              'Sem isso, troque por fato verificável: "denunciado pelo MP", "investigado", "réu", "acusado".')
+        if c.get("clipe"):
+            if not os.path.exists(os.path.join(r["_pasta"], str(c["clipe"]))):
+                erros.append(f'cena {i}: não achei o clipe "{c["clipe"]}" (o caminho é a partir da pasta do roteiro).')
+            elif c.get("fala_do_clipe") and not tem_audio(os.path.join(r["_pasta"], c["clipe"])):
+                erros.append(f'cena {i}: "fala_do_clipe" está ligado, mas o clipe "{c["clipe"]}" não tem som.')
+        elif c.get("fala_do_clipe"):
+            erros.append(f'cena {i}: "fala_do_clipe" precisa de "clipe" (o vídeo do Flow com a narração).')
         if "foto" in c and not isinstance(c["foto"], str):
             erros.append(f'cena {i}: "foto" tem que ser um texto (o que buscar) ou o nome de um arquivo seu.')
     if not tem_fonte:

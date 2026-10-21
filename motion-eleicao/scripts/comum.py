@@ -74,6 +74,11 @@ def duracao_wav(p):
     w = wave.open(p); return w.getnframes() / w.getframerate()
 
 
+def duracao_video(p):
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True)
+    return float(r.stdout.strip() or 0)
+
+
 def cmd_npx():
     for n in ("npx", "npx.cmd"):
         c = shutil.which(n)
