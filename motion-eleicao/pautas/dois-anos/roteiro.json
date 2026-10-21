@@ -1,0 +1,38 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 21/10/2026.",
+ "titulo": "dois anos",
+ "estilo": "dados",
+ "cenas": [
+  {
+   "fala": "Quem recebe o Bolsa Família precisa ouvir isso.",
+   "tela": "Bolsa Família",
+   "foto": "acervo:mapa"
+  },
+  {
+   "fala": "A coordenadora econômica da campanha do senador falou numa regra de transição de dois anos pra quem está no programa.",
+   "tela": "Dois anos",
+   "numero": "2 anos",
+   "detalhe": "regra de transição pra quem está no programa",
+   "fonte": "CBN Bahia, via Poder360, 19/10/2026"
+  },
+  {
+   "fala": "No mesmo dia, ele gravou um vídeo dizendo que não vai acabar com o programa.",
+   "tela": "A versão dele",
+   "citacao": "É para incentivar você, caso você queira.",
+   "quem": "Flávio Bolsonaro, vídeo nas redes, 19/10/2026",
+   "fonte": "Poder360 e CNN Brasil, 19/10/2026"
+  },
+  {
+   "fala": "Mas o plano de governo dele tem setenta e seis páginas. E não cita o Bolsa Família nenhuma vez.",
+   "tela": "No plano",
+   "numero": "76 páginas",
+   "carimbo": "não cita o Bolsa Família",
+   "fonte": "Poder360, 19/10/2026"
+  },
+  {
+   "fala": "Se não vai mexer, por que não tá escrito? Dia 25, pensa nisso.",
+   "tela": "Por que não tá escrito?",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
