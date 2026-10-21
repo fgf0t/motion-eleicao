@@ -1,0 +1,54 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "nada a esconder",
+ "estilo": "pesquise",
+ "cenas": [
+  {
+   "fala": "Ele diz que não tem nada a esconder. Não acredita em mim? Pesquisa.",
+   "tela": "Nada a esconder?",
+   "foto": "acervo:cadeado"
+  },
+  {
+   "fala": "No debate, o senador disse que as contas dele estão sempre abertas.",
+   "detalhe": "\"Minhas contas estão sempre abertas.\"",
+   "fonte": "CNN Brasil, 18/10/2026"
+  },
+  {
+   "fala": "Desafiado a abrir o sigilo bancário e telefônico, ele abriu?",
+   "carimbo": "não disse se abre",
+   "fonte": "CNN Brasil, 18/10/2026"
+  },
+  {
+   "fala": "E quando o Ministério Público perguntou se ele pagou um imóvel em dinheiro vivo, o que ele disse?",
+   "detalhe": "Copacabana, 2012",
+   "carimbo": "não lembrava",
+   "fonte": "Congresso em Foco, 13/08/2020"
+  },
+  {
+   "fala": "As respostas estão nas fontes.",
+   "tela": "A resposta",
+   "lista": [
+    {
+     "q": "\"Não tenho absolutamente nada a esconder\"",
+     "a": "debate da Band",
+     "fonte": "CNN Brasil, 18/10/2026"
+    },
+    {
+     "q": "Desafiado a abrir o sigilo",
+     "a": "não disse se abre",
+     "fonte": "CNN Brasil, 18/10/2026"
+    },
+    {
+     "q": "Pagou em dinheiro vivo?",
+     "a": "não lembrava",
+     "fonte": "Congresso em Foco, 13/08/2020"
+    }
+   ]
+  },
+  {
+   "fala": "Então abre. Dia 25, pensa nisso.",
+   "tela": "Então abre.",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
