@@ -1,0 +1,53 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 21/10/2026.",
+ "titulo": "abre ou não abre",
+ "estilo": "pesquise",
+ "cenas": [
+  {
+   "fala": "No debate, o desafio foi abrir o sigilo. Não acredita em mim? Pesquisa.",
+   "tela": "Abre ou não abre?",
+   "foto": "acervo:cadeado"
+  },
+  {
+   "fala": "Dois dias depois, o presidente formalizou na Justiça Eleitoral a abertura do sigilo bancário, fiscal e telefônico dele.",
+   "detalhe": "bancário, fiscal e telefônico, últimos 8 anos",
+   "fonte": "Metrópoles, 20/10/2026"
+  },
+  {
+   "fala": "E incluiu a primeira-dama e os cinco filhos.",
+   "carimbo": "aberto",
+   "fonte": "Metrópoles, 20/10/2026"
+  },
+  {
+   "fala": "E o senador? A campanha dele decidiu não responder ao desafio.",
+   "carimbo": "não respondeu",
+   "fonte": "CNN Brasil, análise, 10/2026"
+  },
+  {
+   "fala": "As respostas estão nas fontes.",
+   "tela": "A resposta",
+   "lista": [
+    {
+     "q": "Presidente",
+     "a": "abriu, 8 anos",
+     "fonte": "Metrópoles, 20/10/2026"
+    },
+    {
+     "q": "Primeira-dama e 5 filhos",
+     "a": "abriu",
+     "fonte": "Metrópoles, 20/10/2026"
+    },
+    {
+     "q": "O senador",
+     "a": "não respondeu",
+     "fonte": "CNN Brasil, 10/2026"
+    }
+   ]
+  },
+  {
+   "fala": "Um abriu. O outro chamou de factoide. Dia 25, pensa nisso.",
+   "tela": "Um abriu.",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
