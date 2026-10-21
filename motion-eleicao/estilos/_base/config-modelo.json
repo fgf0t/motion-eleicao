@@ -1,0 +1,32 @@
+{
+  "_ajuda": "Copie pra estilos/<nome>/config.json e troque os valores. Em cada chave use UM dos valores de _opcoes. Chave que você apagar fica no padrão.",
+  "_opcoes": {
+    "fundo.textura": "grao (ruído fino) | papel (papel cartão) | grade (quadriculado) | linhas (pautado) | pontos (bolinhas) | pixel (grade de pixel fina) | nenhuma",
+    "fonte_titulo": "Archivo (sem serifa condensada) | Archivo Black | Anton (alta e fina) | Abril Fatface (serifa de revista) | Alfa Slab One (serifa grossa) | Bungee (letreiro) | Ultra | Rubik | Playfair Display (itálico elegante) | DM Serif Display | Maquina (máquina de escrever) | Patrick Hand (mão) | Pixel (8-bit) | Pixel2 (pixel fino) | Recortada (letras recortadas de revista, uma por uma, estilo bilhete)",
+    "fonte_texto": "Archivo | Maquina | Patrick Hand | Jornal (serifa) | Pixel | Pixel2",
+    "foto.modo": "pb (preto e branco) | cor | vhs (esverdeado escuro) | branca (retícula branca, pra fundo escuro) | jornal (retícula de jornal) | tiras (P&B cortada em 3 tiras deslocadas)",
+    "foto.moldura": "borda (borda de papel) | polaroide | rasgado (papel com sombra) | pixel | nenhuma",
+    "foto.posicao": "topo (foto em cima, texto embaixo) | cheia (foto ocupa a tela toda, escurecida, texto por cima)",
+    "camadas": "lista com qualquer um: retalhos (páginas de jornal rasgadas atrás da foto) | amassado (papel preto amassado) | formas (círculo de cor e bola preta) | tarjas (faixas de cor cruzando a foto)",
+    "entrada": "pop (cresce com pulo) | desliza (entra de lado) | maquina (escreve da esquerda pra direita) | glitch (treme) | corte (aparece seco)",
+    "transicao": "corte | chicote (borrão rápido) | preto (piscada preta) | flash (piscada clara) | faixas (faixas coloridas em glitch)",
+    "efeitos": "lista com qualquer um: grao | vinheta | scanlines (linhas de TV) | persiana (sombra de persiana passando)",
+    "legenda.fonte": "Archivo | Maquina | Patrick Hand | Pixel | Pixel2",
+    "carimbo.forma": "borda (selo com contorno) | faixa (tarja de cor cheia)",
+    "cama": "trilha de fundo gerada em código: leve (marimba leve) | dossie (pulso grave) | vhs (drone escuro) | dados (pulso) | pixel (chiptune)"
+  },
+  "fundo": {"cor": "#151515", "cor2": "#2a2a2a", "textura": "grao"},
+  "paleta": {"texto": "#f1f1ec", "destaque": "#f2c230", "apoio": "#e0464f", "papel": "#f4f1e8", "fonte": "#9a9a92"},
+  "fonte_titulo": "Archivo",
+  "titulo_caixa_alta": true,
+  "fonte_texto": "Archivo",
+  "foto": {"modo": "pb", "moldura": "borda", "posicao": "topo"},
+  "camadas": [],
+  "entrada": "pop",
+  "transicao": "corte",
+  "movimento_degrau": true,
+  "efeitos": ["grao", "vinheta"],
+  "legenda": {"cor": "#f1f1ec", "ativa": "#f2c230", "fundo": "rgba(0,0,0,.6)", "fonte": "Archivo"},
+  "carimbo": {"cor": "#e0464f", "forma": "borda"},
+  "cama": "dados"
+}
