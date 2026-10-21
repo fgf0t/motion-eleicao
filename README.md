@@ -94,6 +94,14 @@ bala sem número, a medalha, aumentou ou diminuiu, PEC das Praias, Farmácia Pop
 Desenrola, Previdência e "nada a esconder"), em `motion-eleicao/pautas/`. Peça "faz um vídeo" sem dizer a pauta e a
 IA te mostra a lista. Os fatos foram checados em 19 e 20/10/2026: confira o `fatos.md` de cada uma antes de postar.
 
+### Modo Flow (opcional)
+
+Se a sua IA consegue operar o navegador (Claude in Chrome ou o navegador do app do Claude), ela oferece, depois do
+primeiro vídeo, o modo Flow: abre o Google Flow na sua conta e gera algumas cenas em vídeo, com a narração dentro.
+Gasta créditos do Flow (uns 11 por cena; às vezes a conta tem créditos grátis) e mais token. Ela pergunta antes de
+gastar e se segue com a voz do Flow. Você entra na sua conta Google; a IA nunca digita senha. Os clipes não mostram
+pessoa real nem texto, e o vídeo marca "cena gerada por IA" em cada um.
+
 ## 4. Como ensinar um estilo novo
 
 Viu um vídeo ou uma imagem com uma cara que você quer? Mande pra IA e peça:
