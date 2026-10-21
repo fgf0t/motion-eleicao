@@ -1,0 +1,53 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "previdencia",
+ "estilo": "dossie",
+ "chapeu": "Aposentadoria · 2º turno",
+ "cenas": [
+  {
+   "fala": "Você vai ter que trabalhar mais anos pra se aposentar?",
+   "tela": "Mais anos?"
+  },
+  {
+   "fala": "Em 2019, a reforma subiu a idade mínima pra 62 anos, mulheres, e 65, homens. O senador votou a favor nos dois turnos.",
+   "tela": "Reforma de 2019",
+   "lista": [
+    {
+     "q": "1º turno, 01/10/2019 (56 a 19)",
+     "a": "Flávio: sim",
+     "fonte": "Senado Federal, votações da PEC 6/2019"
+    },
+    {
+     "q": "2º turno, 22/10/2019 (60 a 19)",
+     "a": "Flávio: sim",
+     "fonte": "Senado Federal, votações da PEC 6/2019"
+    }
+   ]
+  },
+  {
+   "fala": "Em março, o coordenador da campanha dele disse que vão revisitar a Previdência. Sem dizer o que muda.",
+   "tela": "Revisitar",
+   "citacao": "vamos ter de revisitar a Previdência",
+   "quem": "Rogério Marinho, coordenador da campanha, 06/03/2026",
+   "carimbo": "sem detalhe",
+   "fonte": "Poder360, 06/03/2026"
+  },
+  {
+   "fala": "O programa do presidente não propõe nova reforma. E em 2019 a bancada do partido dele votou contra.",
+   "tela": "O outro lado",
+   "detalhe": "Programa de Lula 2026: sem nova reforma da Previdência · PT votou contra em 2019",
+   "fonte": "Programa de governo de Lula (PDF); Agência Senado, 22/10/2019"
+  },
+  {
+   "fala": "A versão do senador: diz que não vai fazer economia em cima de aposentados.",
+   "tela": "A versão dele",
+   "detalhe": "Jornal Nacional, 28/08/2026 · a campanha diz que mantém o reajuste das aposentadorias ligado ao mínimo",
+   "fonte": "Imirante, 29/08/2026; InfoMoney, set/2026"
+  },
+  {
+   "fala": "Revisitar a Previdência quer dizer o quê? Pergunta antes do dia 25.",
+   "tela": "Revisitar?",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
