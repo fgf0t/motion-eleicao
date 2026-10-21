@@ -1,0 +1,58 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 21/10/2026.",
+ "titulo": "o plano dos 67",
+ "estilo": "dossie",
+ "cenas": [
+  {
+   "fala": "No dia 13 de outubro, em São Paulo, o senador recebeu um plano de quinhentos empresários.",
+   "tela": "O plano",
+   "detalhe": "Projeto Brasil de Amanhã, 13/10/2026",
+   "fonte": "Brasil de Fato, 15/10/2026",
+   "foto": "acervo:martelo"
+  },
+  {
+   "fala": "O plano foi feito com um instituto que tem o ex-ministro da Economia como presidente de honra.",
+   "tela": "Quem fez",
+   "detalhe": "FIL Brasil, presidente de honra Paulo Guedes",
+   "fonte": "Brasil de Fato, 15/10/2026"
+  },
+  {
+   "fala": "E o que tem nele?",
+   "tela": "O que propõe",
+   "lista": [
+    {
+     "q": "Aposentadoria do homem",
+     "a": "de 65 pra 67",
+     "fonte": "Brasil de Fato, 15/10/2026"
+    },
+    {
+     "q": "Aposentadoria da mulher",
+     "a": "de 62 pra 67",
+     "fonte": "Brasil de Fato, 15/10/2026"
+    },
+    {
+     "q": "Piso da aposentadoria",
+     "a": "solto do mínimo",
+     "fonte": "Brasil de Fato, 15/10/2026"
+    },
+    {
+     "q": "Bolsa Família",
+     "a": "rever quem fica",
+     "fonte": "Brasil de Fato, 15/10/2026"
+    }
+   ]
+  },
+  {
+   "fala": "A campanha diz que conversa informal não é posição oficial.",
+   "tela": "A versão deles",
+   "citacao": "Não se pode transformar conversas informais em posição oficial.",
+   "quem": "nota da campanha",
+   "fonte": "Brasil de Fato, 15/10/2026"
+  },
+  {
+   "fala": "Ele recebeu o plano. Pergunta pra ele se concorda. Dia 25, pensa nisso.",
+   "tela": "Concorda ou não?",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
