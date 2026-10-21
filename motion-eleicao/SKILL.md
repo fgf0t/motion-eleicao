@@ -222,6 +222,17 @@ navegador da pessoa; a montagem, a conferência das falas e o render continuam i
    misturar vozes. Se não, os clipes entram mudos e a narração é a voz de sempre.
 3. Conta: ela entra no Flow com a conta Google dela. **Você nunca digita senha** nem aceita termos por ela.
 
+**Quem escolhe é a pessoa.** Mostre as cenas do roteiro e sugira onde um clipe faria sentido (o gancho, um lugar, um
+objeto em movimento); cena de número, gráfico, lista ou citação costuma ficar melhor com o desenho do estilo. Ela decide
+quais cenas viram clipe (ou nenhuma).
+
+**O que vem do Flow é matéria-prima, não o vídeo pronto.** A montagem trata cada clipe na linguagem do estilo: no `vhs`
+vira fita (esverdeado, chiado, desvio de cor, com PLAY e data por cima), no `dossie` e no `pesquise` vira preto e branco
+granulado, no `pixel` vira pixel, no `dados` fica escuro atrás dos números. Mesmo assim, peça já perto da cara do estilo:
+comece o pedido pelo campo `flow` de `SKILL/estilos/<estilo>/sobre.json` (estilo sem `flow`: descreva pela `descricao`).
+Imagem do Flow também serve: salve ao lado do roteiro e use como `"foto": "flow-c3.png"` com `"foto_credito": "imagem gerada por IA (Google Flow)"`;
+ela passa pelo mesmo tratamento das fotos e o crédito aparece na tela. Nas cenas de clipe a montagem tira os efeitos sonoros do estilo (bip, glitch, moeda): ali o som é a narração e a trilha.
+
 **Regras dos clipes** (além das regras do Passo 2):
 - Nada de pessoa real reconhecível: nem político, nem candidato, nem rosto de ninguém em close. Cena de objeto, lugar
   ou mãos. Imitar candidato com IA é proibido pela lei eleitoral.
@@ -234,13 +245,14 @@ navegador da pessoa; a montagem, a conferência das falas e o render continuam i
 1. Abra https://labs.google/flow numa aba nova e peça pra ela entrar com a conta Google, se não estiver. Clique em
    "Novo projeto". Os pedidos vão no campo "O que você quer criar?" do agente, à direita; Enter envia.
 2. Pra cada cena escolhida, **duas mensagens**, esperando cada uma terminar (olhe a tela a cada 10 a 20 s):
-   primeiro a imagem de referência (`Gere 1 imagem com o Nano Banana 2.1, formato 9:16: <a cena>. Sem pessoas, sem texto.`),
+   primeiro a imagem de referência (`Gere 1 imagem com o Nano Banana 2.1, formato 9:16, <flow do estilo>: <a cena>. Sem pessoas, sem texto.`),
    depois o vídeo a partir dela (Veo 3.1 Lite, 8 s; o Veo Lite só põe voz se tiver imagem de referência).
    Pedindo os dois numa mensagem só, o agente costuma parar depois da imagem.
    Antes de gerar o vídeo o agente pergunta se aprova o custo: clique em "Aprovar" só se a pessoa já aceitou esse gasto
-   (nunca em "Sempre aprovar"). Com muita fila ele avisa que agendou: o vídeo aparece no projeto minutos depois.
+   (nunca em "Sempre aprovar"). Se ele oferecer sozinho um vídeo que você não pediu (sem a narração), clique em
+   "Rejeitar" e mande o seu pedido. Com muita fila ele avisa que agendou: o vídeo aparece no projeto minutos depois.
    Pedido do vídeo, em português:
-   `Vídeo 9:16 de 8 s, câmera lenta se aproximando. <a cena>. Sem pessoas, sem texto na tela. Narração em português do Brasil,
+   `Vídeo 9:16 de 8 s, <flow do estilo>, câmera lenta se aproximando. <a cena>. Sem pessoas, sem texto na tela. Narração em português do Brasil,
    voz masculina grave (Algenib), falando exatamente: "<fala da cena>". Sem música.`
    Texto longo: clique no campo e digite (colar de uma vez às vezes falha). Se o Veo falhar duas vezes na mesma cena,
    tente o Omni Flash ou troque a cena; falha não gasta crédito.
