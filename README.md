@@ -12,7 +12,9 @@ computador: narração, imagens livres, animação feita em código, trilha, leg
 - **Voz grátis:** uma voz padrão, ou a sua, clonada no seu computador.
 - **Nenhuma fala cortada:** antes do render a skill ouve cada fala e confere que está inteira.
 
-**[Veja como funciona, com prints de tudo](https://fgf0t.github.io/motion-eleicao/)**
+**[Veja como funciona, com prints de tudo](https://o-que-ta-em-jogo.pages.dev/skill/)**
+
+**[Baixar a skill](https://o-que-ta-em-jogo.pages.dev/skill/baixar)** · **[Só quero os 9 vídeos prontos (Drive)](https://o-que-ta-em-jogo.pages.dev/skill/videos)**
 
 Não funciona no chat do site do Claude (claude.ai): lá a IA não consegue rodar o motor de vídeo no seu computador.
 
@@ -22,12 +24,12 @@ Não funciona no chat do site do Claude (claude.ai): lá a IA não consegue roda
 
 **Jeito mais fácil:** abra o Claude Code (ou o Codex) numa pasta qualquer e escreva:
 
-> Instala pra mim a skill motion-eleicao seguindo esta página: https://fgf0t.github.io/motion-eleicao/
+> Instala pra mim a skill motion-eleicao seguindo esta página: https://o-que-ta-em-jogo.pages.dev/skill/
 
 A IA baixa este repositório e roda o instalador. Se aparecer pedido de senha do computador, ela vai pedir pra você
 digitar no Terminal (ela não pode digitar senha por você).
 
-**Baixando o zip:** clique em **Code > Download ZIP** aqui em cima, descompacte, abra o Claude Code dentro da pasta e
+**Baixando o zip:** [baixe aqui](https://o-que-ta-em-jogo.pages.dev/skill/baixar) (é o zip deste repositório), descompacte, abra o Claude Code dentro da pasta e
 escreva "instala essa skill".
 
 **Jeito manual:** depois de descompactar,
