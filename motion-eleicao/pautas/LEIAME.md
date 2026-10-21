@@ -1,7 +1,7 @@
 # Pautas prontas
 
 Cada pasta tem `roteiro.json` (pronto pra `scripts/fazer.py`), `fatos.md` (fatos com fonte e a versão do outro lado) e `sobre.json`.
-Fatos checados em 19 e 20/10/2026. Fato pode mudar: confira o `fatos.md` antes de postar.
+Fatos checados entre 19 e 21/10/2026. Fato pode mudar: confira o `fatos.md` antes de postar.
 
 | pasta | resumo | estilo sugerido |
 |---|---|---|
@@ -19,5 +19,8 @@ Fatos checados em 19 e 20/10/2026. Fato pode mudar: confira o `fatos.md` antes d
 | `escala-6x1` | O governo mandou o projeto de 40 horas sem corte de salário e a PEC passou no Congresso; o senador dizia que ia gerar desemprego em massa e votou a favor na véspera. | pixel |
 | `desenrola` | O Desenrola renegociou R$ 53 bi de 15 milhões de pessoas; o novo, de maio/2026, tem juros de até 1,99% ao mês; o senador chamou de paliativo, sem dizer que acabaria com ele. | pixel |
 | `previdencia` | O senador votou pela reforma de 2019 que subiu a idade mínima e a campanha quer revisitar a Previdência sem dizer o quê; o programa do presidente não propõe nova reforma. | dossie |
+| `dois-anos` | A coordenadora econômica do senador falou em transição de 2 anos pra quem está no Bolsa Família; ele nega que vá acabar com o programa, mas o plano de 76 páginas não cita o Bolsa Família. | dados |
+| `plano-dos-67` | Empresários entregaram ao senador um plano (instituto de que Paulo Guedes é presidente de honra) com aposentadoria aos 67 pra homem e mulher e piso solto do mínimo; a campanha diz que não é posição oficial. | dossie |
+| `abre-ou-nao-abre` | O presidente formalizou a abertura dos sigilos dele, da primeira-dama e dos 5 filhos (8 anos); a campanha do senador decidiu não responder e chamou de factoide. | pesquise |
 
 Falas sem nome de político (o motor Gemini bloqueia): os nomes aparecem só na tela.
