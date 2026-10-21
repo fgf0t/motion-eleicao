@@ -43,6 +43,8 @@ def desenho_da_cena(c):
     return k if pontos[k] else "corredor"
 
 GAP, FIM, CAMA, VOL_CAMA = 0.42, 4.2, "vhs", 0.24
+CLIPE_FILTRO = "eq=saturation=0.45:contrast=1.2:brightness=-0.07,colorchannelmixer=rr=0.82:gg=1.05:bb=0.88,rgbashift=rh=4:bh=-4,noise=alls=22:allf=t,gblur=sigma=0.7"  # clipe do Flow vira fita
+CLIPE_CSS = ".clipe-tela { font:900 120px/.92 Archivo; font-stretch:68%; color:#f1f4ee; letter-spacing:2px; } .vcr { z-index:77; }"  # PLAY e data por cima do clipe
 CSS = """
 #fundo { position:absolute; inset:0; background:#050605; }
 .vhs { position:absolute; left:-40px; top:-40px; width:1160px; height:2000px; opacity:0; }
