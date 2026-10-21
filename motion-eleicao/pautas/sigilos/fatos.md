@@ -16,3 +16,7 @@ Checado em 19 e 20/10/2026 nas fontes acima. Fato pode mudar: confira antes de p
 
 - Flávio: "Eu não tenho absolutamente nada a esconder" e "Minhas contas estão sempre abertas" (CNN Brasil e Correio Braziliense).
 - O título da matéria da CNN (pelo endereço do link) diz que Flávio respondeu que o petista não tem celular. Conferir o texto da matéria antes de usar.
+
+## Atualização (21/10/2026)
+
+- Em 20/10/2026 o presidente formalizou na Justiça Eleitoral a abertura dos sigilos bancário, fiscal e telefônico dele, da primeira-dama e dos 5 filhos, dos últimos 8 anos (Metrópoles). A campanha do senador decidiu não responder e chamou de "factoide" (CNN Brasil, análise). Ver a pauta `abre-ou-nao-abre`.
