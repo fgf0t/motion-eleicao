@@ -3,6 +3,7 @@
 from montar import br, cabe, esc
 
 GAP, FIM, CAMA, VOL_CAMA = 0.55, 3.6, "pesquise", 0.3
+CLIPE_FILTRO = "hue=s=0,eq=contrast=1.7:brightness=-0.05,noise=alls=10:allf=t"  # clipe do Flow vira P&B duro
 CSS = """
 #fundo { position:absolute; inset:0; background:#050505; }
 .ret { position:absolute; left:50%; transform:translateX(-50%); opacity:0; }
