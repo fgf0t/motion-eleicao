@@ -1,0 +1,55 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "o desafio dos sigilos",
+ "estilo": "dossie",
+ "chapeu": "Debate · Band · 18/10/2026",
+ "cenas": [
+  {
+   "fala": "No debate de domingo, o presidente fez um desafio ao adversário: abrir o sigilo bancário e telefônico.",
+   "tela": "O desafio",
+   "detalhe": "sigilo bancário e telefônico",
+   "fonte": "CNN Brasil, 18/10/2026",
+   "foto": "acervo:cadeado"
+  },
+  {
+   "fala": "E pediu pra entregar tudo à Justiça antes do segundo turno.",
+   "tela": "Antes do dia 25",
+   "detalhe": "ao STF e ao TSE",
+   "fonte": "Super Rádio Tupi e Metrópoles, debate da Band, 18/10/2026"
+  },
+  {
+   "fala": "Depois do debate, ele assinou a autorização pra abrir o dele e o dos cinco filhos, pra entregar à Justiça Eleitoral.",
+   "tela": "Autorização",
+   "lista": [
+    {
+     "q": "Sigilo bancário",
+     "a": "aberto",
+     "fonte": "@lulaoficial, 19/10/2026"
+    },
+    {
+     "q": "Sigilo telefônico",
+     "a": "aberto",
+     "fonte": "@lulaoficial, 19/10/2026"
+    },
+    {
+     "q": "Dele e dos 5 filhos",
+     "a": "ao TSE",
+     "fonte": "@lulaoficial, 19/10/2026"
+    }
+   ]
+  },
+  {
+   "fala": "O senador respondeu que não tem nada a esconder. Mas não disse se abre o dele.",
+   "tela": "Não respondeu",
+   "citacao": "Eu não tenho absolutamente nada a esconder.",
+   "quem": "Flávio Bolsonaro, debate da Band, 18/10/2026",
+   "carimbo": "não disse se abre",
+   "fonte": "CNN Brasil e Correio Braziliense"
+  },
+  {
+   "fala": "Quem não deve, não teme. Dia 25, pensa nisso.",
+   "tela": "Quem não deve,\nnão teme.",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
