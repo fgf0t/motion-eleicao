@@ -111,6 +111,8 @@ o `roteiro.json`. Comece copiando o exemplo do estilo escolhido em `SKILL/exempl
 | `grafico` | só no `pixel`, exige `fonte`: linha em degraus com dados REAIS da fonte | `{"rotulos": ["2004", "2026"], "series": [{"nome": "com ganho real", "valores": [260, 1621], "rotulo_final": "R$ 1.621"}]}` |
 | `linha_tempo` | só no `pixel`, exige `fonte`: marcos em ordem | `[{"ano": "2023", "texto": "lei aprovada"}, {"ano": "2024", "texto": "em vigor"}]` |
 | `bate` | palavra da fala em que o número ou carimbo entra | `"menor"` |
+| `clipe` | vídeo 9:16 gerado no Flow (ver "Modo Flow"), salvo ao lado do roteiro; cobre a cena com o título, a fonte e "cena gerada por IA" | `"clipes/c1.mp4"` |
+| `fala_do_clipe` | `true` quando a narração da cena vem de dentro do `clipe` (voz do Flow); a `fala` tem que ser o que o clipe diz | `true` |
 | `fala_voz` | só se a voz pronunciar errado: o texto que a voz lê (a legenda continua com `fala`) | `"Assembleia do Rio"` no lugar de `"Alerj"` |
 
 `bate` é opcional: sem ele, o número entra quando a fala diz o número e o carimbo entra no fim da fala.
@@ -201,6 +203,54 @@ Mostre o caminho do vídeo e do `-fontes.txt` e lembre a pessoa de:
    no primeiro vídeo com a voz do computador, recomende trocar pela voz dela ("quero usar a minha voz"): fica mais natural
    e mais confiável;
 3. não impulsionar (não pagar pra promover).
+
+Na entrega do **primeiro** vídeo, se você consegue operar um navegador (Claude in Chrome, o navegador do app do Claude
+ou outro que você tenha), ofereça uma vez: "Quer testar o modo Flow? Eu opero o seu navegador no Google Flow e gero
+cenas em vídeo pro próximo, com narração. Gasta mais token, mas às vezes o Flow tem créditos grátis."
+Se você não opera navegador, não ofereça. Se ela topar, siga "Modo Flow" abaixo.
+
+## Modo Flow (opcional: cenas em vídeo geradas no Google Flow)
+
+Peças mais robustas: algumas cenas viram vídeo de 8 s gerado no Flow (Google), com a narração dentro. Você opera o
+navegador da pessoa; a montagem, a conferência das falas e o render continuam iguais.
+
+**Antes de começar**, diga e espere ela responder:
+1. Custo: cada clipe gasta créditos do Flow (uns 10 no Veo Lite, mais 1 da imagem de referência) e bastante token seu.
+   Diga quantos clipes pretende fazer (2 a 4 por vídeo; todas as cenas, se for usar a voz do Flow em tudo) e o total de créditos.
+2. Voz: "Sigo com a voz do Flow?" Se sim, a narração de cada clipe vem de dentro dele (`fala_do_clipe`), e as cenas sem
+   clipe usam o Gemini com a mesma voz (`{"motor": "gemini", "voz": "Algenib"}`, chave grátis, ver README), pra não
+   misturar vozes. Se não, os clipes entram mudos e a narração é a voz de sempre.
+3. Conta: ela entra no Flow com a conta Google dela. **Você nunca digita senha** nem aceita termos por ela.
+
+**Regras dos clipes** (além das regras do Passo 2):
+- Nada de pessoa real reconhecível: nem político, nem candidato, nem rosto de ninguém em close. Cena de objeto, lugar
+  ou mãos. Imitar candidato com IA é proibido pela lei eleitoral.
+- Nome de político na fala derruba a geração no Flow: escreva "o senador", "o candidato"; o nome vai na `tela`.
+- Peça sem texto, sem letreiro, sem logo, sem bandeira de partido e sem número de candidato (a IA inventa letras erradas).
+- A fala do clipe tem que caber em 8 s: até umas 18 palavras.
+- O vídeo final marca "cena gerada por IA" em cada clipe, e a pessoa marca "feito com IA" na plataforma.
+
+**Passo a passo no navegador:**
+1. Abra https://labs.google/flow numa aba nova e peça pra ela entrar com a conta Google, se não estiver. Clique em
+   "Novo projeto". Os pedidos vão no campo "O que você quer criar?" do agente, à direita; Enter envia.
+2. Pra cada cena escolhida, **duas mensagens**, esperando cada uma terminar (olhe a tela a cada 10 a 20 s):
+   primeiro a imagem de referência (`Gere 1 imagem com o Nano Banana 2.1, formato 9:16: <a cena>. Sem pessoas, sem texto.`),
+   depois o vídeo a partir dela (Veo 3.1 Lite, 8 s; o Veo Lite só põe voz se tiver imagem de referência).
+   Pedindo os dois numa mensagem só, o agente costuma parar depois da imagem.
+   Antes de gerar o vídeo o agente pergunta se aprova o custo: clique em "Aprovar" só se a pessoa já aceitou esse gasto
+   (nunca em "Sempre aprovar"). Com muita fila ele avisa que agendou: o vídeo aparece no projeto minutos depois.
+   Pedido do vídeo, em português:
+   `Vídeo 9:16 de 8 s, câmera lenta se aproximando. <a cena>. Sem pessoas, sem texto na tela. Narração em português do Brasil,
+   voz masculina grave (Algenib), falando exatamente: "<fala da cena>". Sem música.`
+   Texto longo: clique no campo e digite (colar de uma vez às vezes falha). Se o Veo falhar duas vezes na mesma cena,
+   tente o Omni Flash ou troque a cena; falha não gasta crédito.
+3. Baixe cada vídeo: clique nele, no ícone de baixar (seta pra baixo, no alto) e em "720p". Ele cai na pasta Downloads;
+   mova pra `clipes/c<N>.mp4` na pasta do roteiro (N = número da cena) e não deixe cópia em Downloads.
+4. **Assista cada clipe** (tire 2 ou 3 quadros com ffmpeg e olhe): tem rosto, texto inventado ou logo? Refaça ou corte a cena.
+   A fala tem que bater com a `fala` do roteiro; se o clipe disse diferente, escreva na `fala` o que ele disse de fato
+   (se ainda for verdade e tiver fonte) ou gere de novo.
+5. No roteiro: `"clipe": "clipes/c1.mp4"` na cena e, com a voz do Flow, `"fala_do_clipe": true`. Rode o `fazer.py`
+   normalmente: ele confere as falas dos clipes também. Se parar em "PAREI" numa cena de clipe, gere o clipe de novo.
 
 ## Consertos rápidos
 
