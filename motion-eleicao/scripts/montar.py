@@ -2,7 +2,7 @@
 # O tempo de cada palavra sai da própria fala (pausas detectadas no áudio), sem transcrição.
 # Cada estilo (estilos/<nome>/estilo.py ou estilos/<nome>/config.json) só desenha as cenas; o resto é igual pra todos.
 # uso: python3 scripts/montar.py roteiro.json
-import importlib, importlib.util, json, os, re, shutil, sys
+import hashlib, importlib, importlib.util, json, os, re, shutil, sys
 import numpy as np
 from PIL import Image
 from comum import SKILL, ASSETS, HYPERFRAMES, ff, ler_roteiro, ler_wav, duracao_wav, duracao_video, passo, aviso, sem_acento
@@ -332,19 +332,22 @@ def montar(r):
         js += f'tl.set("#cf{i}", {{ opacity: 1 }}, {max(0, L["t"] - 0.1):.3f}); tl.set("#cf{i}", {{ opacity: 0 }}, {ctx.fim_cena(i):.3f});\n'
     # cena com "clipe" (vídeo gerado no Flow): o vídeo cobre a cena, com título, fonte e "cena gerada por IA"
     if any(c.get("clipe") for c in ctx.cenas):  # a legenda de cada estilo tem a própria camada: com clipe, fica sempre por cima
-        corpo.append("<style>.leg { z-index:80 !important; }</style>")
+        corpo.append("<style>.leg { z-index:80 !important; }" + getattr(est, "CLIPE_CSS", "") + "</style>")
+    # o clipe é matéria-prima: o estilo trata ele na linguagem dele (VHS vira fita, dossiê vira P&B granulado...)
+    filtro = getattr(est, "CLIPE_FILTRO", "")
+    marca_f = hashlib.sha1(filtro.encode()).hexdigest()[:6]
     for L in ctx.L:
         c, i = L["c"], L["i"]
         if not c.get("clipe"): continue
         os.makedirs(os.path.join(A, "v"), exist_ok=True)
-        origem, saida = os.path.join(r["_pasta"], c["clipe"]), os.path.join(A, "v", f"c{i}.mp4")
+        origem, saida = os.path.join(r["_pasta"], c["clipe"]), os.path.join(A, "v", f"c{i}-{marca_f}.mp4")
         if not os.path.exists(saida) or os.path.getmtime(saida) < os.path.getmtime(origem):
-            ff("-i", origem, "-an", "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
+            ff("-i", origem, "-an", "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" + ("," + filtro if filtro else ""),
                "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-g", "12", "-pix_fmt", "yuv420p", saida)
         ini, fim = L["t"], ctx.fim_cena(i)
         resta = duracao_video(saida) - L["s0"] - 0.05  # o vídeo anda junto com a fala (que começa em s0 dentro do clipe)
         dur = max(0.5, min(fim - ini, resta))
-        corpo.append(f'<video id="vc{i}" class="clipe" src="assets/v/c{i}.mp4" muted playsinline data-start="{ini:.3f}" '
+        corpo.append(f'<video id="vc{i}" class="clipe" src="assets/v/c{i}-{marca_f}.mp4" muted playsinline data-start="{ini:.3f}" '
                      f'data-duration="{dur:.3f}" data-media-start="{L["s0"]:.3f}" data-track-index="{10 + i}"></video>')
         num = f'<span class="clipe-num">{esc(c["numero"])}</span>' if c.get("numero") else ""
         corpo.append(f'<div class="clipe-sombra" id="cs{i}"></div><div class="clipe-tela" id="ct{i}">{esc(c.get("tela", ""))}{num}</div>'
@@ -359,6 +362,11 @@ def montar(r):
         L = ctx.L[i]
         corpo.append(f'<div class="cred-foto" id="cm{i}">{esc("Reprodução: " + m["veiculo"] + (", " + m["data"] if m.get("data") else ""))}</div>')
         js += f'tl.set("#cm{i}", {{ opacity: 1 }}, {max(0, L["t"] - 0.1):.3f}); tl.set("#cm{i}", {{ opacity: 0 }}, {ctx.fim_cena(i):.3f});\n' 
+    # cena de clipe é vídeo de verdade: sem os efeitos do estilo (bip, glitch, moeda) por cima dele nem na entrada dele
+    janelas = [(L["t"] - 0.8, ctx.fim_cena(L["i"])) for L in ctx.L if L["c"].get("clipe")]
+    ctx.sons = [s for s in ctx.sons if not any(a <= s[1] < b for a, b in janelas)]
+    k = getattr(est, "VOL_SFX", 1.0)  # volume dos efeitos do estilo
+    ctx.sons = [(arq, t, dur, round(vol * k, 3)) for arq, t, dur, vol in ctx.sons]
     for L in ctx.L: ctx.aud(f"a/c{L['i']}.wav", L["t"], 1.0)
     ctx.aud("sfx/cama.wav", 0.0, est.VOL_CAMA, ctx.total)
     open(os.path.join(ctx.D, "index.html"), "w", encoding="utf-8").write(html(ctx, "\n".join(corpo), js))
