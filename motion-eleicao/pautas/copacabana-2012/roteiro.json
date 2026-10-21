@@ -1,0 +1,45 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "copacabana 2012",
+ "estilo": "dossie",
+ "chapeu": "Copacabana · 2012",
+ "cenas": [
+  {
+   "fala": "Não é a primeira vez que um imóvel do senador vira pergunta.",
+   "tela": "Outro imóvel",
+   "foto": "acervo:praia"
+  },
+  {
+   "fala": "Em 2012, duas salas em Copacabana. Na escritura, 310 mil reais.",
+   "tela": "A escritura",
+   "numero": "R$ 310 mil",
+   "detalhe": "valor no cartório, 2012",
+   "fonte": "O Globo, via Congresso em Foco, ago/2020"
+  },
+  {
+   "fala": "No mesmo dia, o vendedor depositou 638 mil reais em espécie.",
+   "tela": "No mesmo dia",
+   "numero": "R$ 638 mil",
+   "carimbo": "em espécie",
+   "fonte": "O Globo, via Congresso em Foco, ago/2020"
+  },
+  {
+   "fala": "Ao Ministério Público, ele disse que não lembrava se pagou em dinheiro vivo.",
+   "tela": "Não lembrava",
+   "carimbo": "não lembrava",
+   "fonte": "Congresso em Foco, 13/08/2020"
+  },
+  {
+   "fala": "O caso foi arquivado em 2022, depois que o STJ anulou as provas. A pergunta ficou.",
+   "tela": "Arquivado",
+   "detalhe": "TJ-RJ arquivou em 2022; Gilmar Mendes manteve em 2025",
+   "carimbo": "arquivado",
+   "fonte": "InfoMoney"
+  },
+  {
+   "fala": "Agora diz que não tem nada a esconder. Então abre o sigilo. Dia 25, pensa nisso.",
+   "tela": "Então abre.",
+   "detalhe": "Dia 25, pensa nisso."
+  }
+ ]
+}
