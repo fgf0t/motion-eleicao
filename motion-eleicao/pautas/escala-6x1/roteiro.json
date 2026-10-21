@@ -1,0 +1,61 @@
+{
+ "_nota": "Falas sem nome de político (o Gemini bloqueia). Checado em 19-20/10/2026.",
+ "titulo": "fim da escala 6x1",
+ "estilo": "pixel",
+ "cenas": [
+  {
+   "fala": "Duas folgas por semana, sem perder salário. Quem puxou isso, e quem mudou de ideia?",
+   "tela": "Fim da 6x1",
+   "icone": "calendario"
+  },
+  {
+   "fala": "Em abril, o governo mandou o projeto de 40 horas. A Câmara aprovou em maio. O Senado, em outubro, por 75 a 1.",
+   "tela": "Aprovado",
+   "fonte": "CNN Brasil, 14/04/2026 e 27/05/2026; Congresso em Foco, 14/10/2026",
+   "linha_tempo": [
+    {
+     "ano": "abr/2026",
+     "texto": "governo manda o projeto"
+    },
+    {
+     "ano": "mai/2026",
+     "texto": "Câmara: 472 a 22"
+    },
+    {
+     "ano": "out/2026",
+     "texto": "Senado: 75 a 1"
+    }
+   ]
+  },
+  {
+   "fala": "Em maio, o senador dizia que o fim da 6x1 ia gerar desemprego em massa.",
+   "tela": "Em maio",
+   "citacao": "gerar desemprego em massa",
+   "quem": "Flávio Bolsonaro, maio de 2026",
+   "fonte": "Itatiaia, maio de 2026",
+   "icone": "alerta"
+  },
+  {
+   "fala": "Na véspera da votação, mudou. Disse que ia votar a favor. E votou.",
+   "tela": "Em outubro",
+   "citacao": "A maioria dos trabalhadores brasileiros querem o fim da 6x1, então vou votar a favor.",
+   "quem": "Flávio Bolsonaro, 13/10/2026",
+   "carimbo": "votou sim",
+   "fonte": "A Gazeta, 13/10/2026; CNN Brasil, 14/10/2026",
+   "icone": "urna"
+  },
+  {
+   "fala": "Ele segue defendendo trabalho pago por hora, que chama de algo ainda melhor.",
+   "tela": "A versão dele",
+   "citacao": "A gente defende algo ainda melhor.",
+   "quem": "Flávio Bolsonaro, outubro de 2026",
+   "fonte": "A Gazeta, 13/10/2026; CNN Brasil, 14/10/2026",
+   "icone": "balanca"
+  },
+  {
+   "fala": "Passou no Congresso. Quem vai cuidar disso é quem você escolher. Dia 25.",
+   "tela": "Dia 25",
+   "detalhe": "Duas folgas sem perder salário."
+  }
+ ]
+}
