@@ -9,6 +9,7 @@ O projeto está sob CC BY-NC-SA 4.0 (ver `LICENSE`). Estas partes são de tercei
 | Fotos do acervo: martelo (Chris Potter) e cadeado (Shixart1985) | `motion-eleicao/assets/acervo/` | CC BY 2.0 |
 | Fotos do acervo: cartuchos (TimBomBom1), plenário da Alerj e Copacabana (Wilfredor) | `motion-eleicao/assets/acervo/` | CC0 |
 | Fotos do acervo: urna (TSE) e mapa (IBGE) | `motion-eleicao/assets/acervo/` | domínio público |
+| Regras de movimento, adaptadas das skills oficiais do GSAP (Copyright (c) 2026 GreenSock) e da skill `animate` (Copyright (c) 2026 Emil Kowalski) | `motion-eleicao/estilos/_base/MOVIMENTO.md` | MIT |
 | Amostra da voz "Narrador Grave", gerada com o modelo OmniVoice (k2-fsa) | `motion-eleicao/assets/voz-narrador-grave.wav` | pesos do modelo CC BY-NC; só uso não comercial |
 
 Baixados na instalação ou no primeiro uso, não incluídos aqui: HyperFrames, Kokoro-82M (Apache 2.0), Piper (MIT),
