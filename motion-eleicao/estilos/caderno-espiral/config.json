@@ -1,0 +1,16 @@
+{
+  "fundo": {"cor": "#292cc5", "cor2": "#8353d1", "textura": "grao"},
+  "paleta": {"texto": "#f6efe2", "destaque": "#f2c230", "apoio": "#b37343", "papel": "#7a8da7", "fonte": "#e8dccb"},
+  "fonte_titulo": "Ultra",
+  "titulo_caixa_alta": false,
+  "fonte_texto": "Archivo",
+  "foto": {"modo": "cor", "moldura": "borda", "posicao": "topo"},
+  "camadas": ["formas"],
+  "entrada": "corte",
+  "transicao": "faixas",
+  "movimento_degrau": true,
+  "efeitos": ["grao", "vinheta"],
+  "legenda": {"cor": "#f6efe2", "ativa": "#f2c230", "fundo": "rgba(20,20,60,.7)", "fonte": "Archivo"},
+  "carimbo": {"cor": "#f2c230", "forma": "faixa"},
+  "cama": "dados"
+}
