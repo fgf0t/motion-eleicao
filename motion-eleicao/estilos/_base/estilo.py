@@ -187,7 +187,11 @@ def _cenas(x, cfg):
             c.append(titulo(f"t{k}", txt, 520, tam, fonte_t, k))
             js += entra(cfg, f"#t{k}", L["t"], x.total, sgn); x.aud("sfx/thump.wav", L["t"], 0.5)
             if cena.get("detalhe"):
-                c.append(f'<div class="det-b" id="d{k}" style="top:1150px; color:{P["destaque"]}">{esc(cena["detalhe"])}</div>')
+                # chamada final em tarja da cor de destaque (cor solta sobre fundo claro não se lê)
+                rgb = [int(P["destaque"].lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)]
+                cor_t = "#1b1b1b" if (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) > 140 else "#ffffff"
+                c.append(f'<div class="det-b" id="d{k}" style="top:1150px; left:0; right:0; margin:0 auto; width:fit-content; max-width:900px; '
+                         f'background:{P["destaque"]}; color:{cor_t}; font-weight:700; font-size:56px; padding:12px 30px; transform:rotate(-2deg)">{esc(cena["detalhe"])}</div>')
                 js += entra(cfg, f"#d{k}", L["t"] + (L["fim"] - L["t"]) * 0.6, x.total)
             continue
         y = 260
