@@ -1,0 +1,16 @@
+{
+  "fundo": {"cor": "#f4f4f1", "cor2": "#e4e2df", "textura": "papel"},
+  "paleta": {"texto": "#1d1c1a", "destaque": "#1f4fbf", "apoio": "#f2c230", "papel": "#ffffff", "fonte": "#5a5753"},
+  "fonte_titulo": "DM Serif Display",
+  "titulo_caixa_alta": false,
+  "fonte_texto": "Jornal",
+  "foto": {"modo": "pb", "moldura": "borda", "posicao": "topo"},
+  "camadas": ["formas"],
+  "entrada": "desliza",
+  "transicao": "flash",
+  "movimento_degrau": false,
+  "efeitos": ["grao"],
+  "legenda": {"cor": "#1d1c1a", "ativa": "#1f4fbf", "fundo": "rgba(255,255,255,.85)", "fonte": "Archivo"},
+  "carimbo": {"cor": "#1f4fbf", "forma": "faixa"},
+  "cama": "leve"
+}
