@@ -1,0 +1,16 @@
+{
+  "fundo": {"cor": "#d4ccc2", "cor2": "#aba196", "textura": "grade"},
+  "paleta": {"texto": "#17151a", "destaque": "#f2c230", "apoio": "#1f4fbf", "papel": "#f6f4f0", "fonte": "#3b3438"},
+  "fonte_titulo": "Anton",
+  "titulo_caixa_alta": true,
+  "fonte_texto": "Archivo",
+  "foto": {"modo": "pb", "moldura": "rasgado", "posicao": "topo"},
+  "camadas": ["retalhos", "amassado", "tarjas"],
+  "entrada": "corte",
+  "transicao": "chicote",
+  "movimento_degrau": true,
+  "efeitos": ["grao", "persiana", "vinheta"],
+  "legenda": {"cor": "#f6f4f0", "ativa": "#f2c230", "fundo": "rgba(23,21,26,.85)", "fonte": "Archivo"},
+  "carimbo": {"cor": "#1f4fbf", "forma": "faixa"},
+  "cama": "dossie"
+}
