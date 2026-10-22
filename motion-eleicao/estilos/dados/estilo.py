@@ -8,9 +8,9 @@ CLIPE_FILTRO = "eq=saturation=0.55:contrast=1.1:brightness=-0.12"  # clipe do Fl
 CSS = pesquise.CSS + """
 .rot9 { position:absolute; left:0; right:0; text-align:center; font:700 40px Maquina; color:#9a9a92; letter-spacing:6px; opacity:0; z-index:20; text-transform:uppercase; }
 .num9 { position:absolute; left:0; right:0; text-align:center; font:900 330px/1 Archivo; font-stretch:72%; color:#f1f1ec; opacity:0; z-index:20; white-space:nowrap; }
-.sub9 { position:absolute; left:90px; right:90px; text-align:center; font:300 50px/1.15 Archivo; color:#e6e6df; opacity:0; z-index:20; }
+.sub9 { position:absolute; left:90px; right:150px; text-align:center; font:300 50px/1.15 Archivo; color:#e6e6df; opacity:0; z-index:20; }
 .selo9 { position:absolute; left:0; right:0; margin:0 auto; width:fit-content; border:6px solid #f2c230; color:#f2c230; font:900 60px/1 Archivo; font-stretch:75%; padding:10px 22px; white-space:nowrap; opacity:0; z-index:21; text-transform:uppercase; }
-.fonte9 { position:absolute; left:60px; right:60px; text-align:center; font:700 22px Maquina; color:#8f8f88; letter-spacing:1px; opacity:0; z-index:20; }
+.fonte9 { position:absolute; left:60px; right:150px; text-align:center; font:700 22px Maquina; color:#8f8f88; letter-spacing:1px; opacity:0; z-index:20; }
 .seta9 { position:absolute; left:0; right:0; margin:0 auto; width:120px; opacity:0; z-index:20; }
 #cam3 { position:absolute; inset:0; perspective:1300px; perspective-origin:50% 45%; }
 #mundo { position:absolute; inset:0; transform-style:preserve-3d; }
@@ -98,7 +98,7 @@ def cenas(x):
             c.append(f'<div class="fonte9" id="o{k}" style="top:1290px">FONTE: {esc(cena["fonte"]).upper()}</div>')
             js += mostra(f"#o{k}", tsel + 0.2, ate, 0.3, "y: 0")
         if cena.get("ressalva"):
-            c.append(f'<div class="sub9" id="rs{k}" style="top:1370px; font-size:34px; color:#f2c230">{esc(cena["ressalva"])}</div>')
+            c.append(f'<div class="sub9" id="rs{k}" style="top:1345px; font-size:34px; color:#f2c230">{esc(cena["ressalva"])}</div>')
             js += mostra(f"#rs{k}", x.bate(L, None, 0.8), ate)
     # profundidades: o fundo fica atrás, o número e o selo vêm pra frente
     js += 'tl.set(".ret", { z: -120 }, 0); tl.set(".rot9", { z: 20 }, 0); tl.set(".num9", { z: 90 }, 0); tl.set(".seta9", { z: 130 }, 0); tl.set(".sub9", { z: 40 }, 0); tl.set(".selo9", { z: 160 }, 0); tl.set(".fonte9", { z: 0 }, 0); tl.set(".perg, .gig", { z: 120 }, 0);\n'
@@ -109,7 +109,7 @@ def cenas(x):
     if x.assinatura():
         c.append(f'<div class="fim-ass" id="ass">{x.assinatura()}</div>')
         js += f'tl.to("#ass", {{ opacity: 1, duration: 0.4 }}, {fim + 0.5:.3f});\n'
-    leg, ljs = x.legenda("font:700 34px/1.25 Archivo; color:#f2c230;", "#ffffff", topo=1560, extra_css="z-index:30", pular=escrita)
+    leg, ljs = x.legenda("font:700 34px/1.25 Archivo; color:#f2c230;", "#ffffff", topo=1450, extra_css="z-index:30", pular=escrita)
     c.append(leg); js += ljs
     x.aud("sfx/boom.wav", 0.0, 0.3, 4.0)
     return c, js
