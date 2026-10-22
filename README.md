@@ -6,7 +6,7 @@ Uma skill gratuita pro **Claude Code** e o **Codex** que faz vídeo motion 9:16 
 a partir de uma pauta. Você escreve a pauta. A IA confere os fatos e escreve o roteiro. O resto sai sozinho, no seu
 computador: narração, imagens livres, animação feita em código, trilha, legenda e render.
 
-- **5 estilos:** dossiê, VHS, pesquise, dados e pixel. E dá pra ensinar estilos novos mandando uma referência.
+- **8 estilos:** dossiê, VHS, pesquise, dados, pixel, zine punk, editorial grunge e caderno de espiral. E dá pra ensinar estilos novos mandando uma referência.
 - **17 pautas** com os fatos já checados e as fontes.
 - **Fonte em todo fato**, na tela. A skill recusa roteiro com número sem fonte e acusação sem condenação.
 - **Voz grátis:** uma voz padrão, ou a sua, clonada no seu computador.
