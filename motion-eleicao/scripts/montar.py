@@ -156,6 +156,7 @@ class Ctx:
     # ---------- textos ----------
     def legenda(self, fonte_css, cor_ativa, fundo_css="", topo=1330, extra_css="", ativa_prop="color", pular=()):
         """palavra a palavra em blocos de até 3 palavras; quebra na pontuação"""
+        topo = min(topo, SEGURA["leg"])  # a legenda nunca desce pra área dos botões do Reels/TikTok
         h, js, n = [f'<div class="leg" style="top:{topo}px; {extra_css}">'], "", 0
         for L in self.L:
             if L["i"] in pular: continue
@@ -229,6 +230,9 @@ FONTES = """@font-face { font-family:"Archivo"; src:url("assets/fonts/Archivo.tt
 @font-face { font-family:"Pixel2"; font-weight:700; src:url("assets/fonts/Silkscreen-Bold.ttf") format("truetype"); font-display:block; }
 @font-face { font-family:"Rubik"; font-weight:800; src:url("assets/fonts/Rubik-800.woff2") format("woff2"); font-display:block; }
 """
+# Área segura do 9:16 (Reels e TikTok): o topo até 220 px tem o cabeçalho do app; de 1500 pra baixo, a descrição e os botões;
+# na direita, de 750 a 1500, a coluna de ícones (x > 940). Texto que precisa ser lido fica fora dessas faixas.
+SEGURA = {"topo": 220, "base": 1500, "dir": 940, "leg": 1450}
 BASE_CSS = """* { margin:0; padding:0; box-sizing:border-box; }
 html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
 #root { position:relative; width:1080px; height:1920px; overflow:hidden; font-family:"Archivo", sans-serif; }
@@ -238,20 +242,23 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
 .leg { position:absolute; left:70px; right:150px; text-align:center; z-index:80; }
 .leg .ch { position:absolute; left:0; right:0; opacity:0; }
 .leg .w { display:inline-block; margin:0 .12em; }
-.cred { position:absolute; left:80px; right:80px; bottom:330px; text-align:center; font:400 21px/1.4 "Archivo"; opacity:0; z-index:85; }
+.cred { position:absolute; left:80px; right:150px; bottom:440px; text-align:center; font:400 21px/1.4 "Archivo"; opacity:0; z-index:85; }
 .recorte-j { position:absolute; background:#ece6d6; color:#141414; padding:26px 36px 30px; box-shadow:0 14px 30px rgba(0,0,0,.55); opacity:0;
   background-image:repeating-linear-gradient(0deg, rgba(0,0,0,.035) 0 1px, transparent 1px 5px); clip-path:polygon(0 2%, 3% 0, 30% 1.5%, 62% 0, 100% 1%, 99% 40%, 100% 98%, 70% 100%, 35% 98.5%, 2% 100%, 0 60%); }
 .recorte-j .rec-topo { display:flex; justify-content:space-between; font:900 24px/1 "Archivo"; letter-spacing:2px; border-bottom:3px solid #141414; padding-bottom:10px; margin-bottom:16px; }
 .recorte-j .rec-topo span:last-child { font:700 22px "Maquina"; letter-spacing:0; }
 .recorte-j .rec-tit { font:400 58px/1.08 "Jornal"; }
 .recorte-j .rec-linha { font:400 28px/1.3 "Archivo"; margin-top:14px; color:#333; }
-.cred-foto { position:absolute; left:40px; right:40px; bottom:22px; text-align:right; font:500 19px/1.2 "Archivo"; color:rgba(240,240,232,.78); text-shadow:0 1px 3px #000, 0 0 8px rgba(0,0,0,.8); opacity:0; z-index:95; }
+.cred-foto { position:absolute; left:60px; right:60px; top:228px; text-align:right; font:500 19px/1.2 "Archivo"; color:rgba(240,240,232,.78); text-shadow:0 1px 3px #000, 0 0 8px rgba(0,0,0,.8); opacity:0; z-index:95; }
 .clipe { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; z-index:74; }
 .clipe-sombra { position:absolute; inset:0; z-index:75; opacity:0; background:linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 52%, rgba(0,0,0,.7) 100%); }
 .clipe-tela { position:absolute; left:70px; right:70px; top:230px; text-align:center; font:900 88px/1.02 "Archivo"; color:#fff; text-transform:uppercase; text-shadow:0 4px 20px rgba(0,0,0,.75); opacity:0; z-index:76; }
 .clipe-num { display:block; font-size:150px; color:#ffd84a; margin-top:18px; }
 .clipe-fonte { position:absolute; left:50%; top:1200px; transform:translateX(-50%); max-width:940px; text-align:center; font:600 26px/1.3 "Archivo"; color:#fff; background:rgba(0,0,0,.55); padding:6px 14px; border-radius:6px; opacity:0; z-index:76; }
 .clipe-ia { position:absolute; top:70px; right:50px; font:700 22px "Archivo"; letter-spacing:1px; color:#fff; background:rgba(0,0,0,.6); padding:7px 14px; border-radius:6px; opacity:0; z-index:96; }
+.busca-g { position:absolute; left:90px; right:150px; top:1262px; margin:0 auto; width:fit-content; max-width:840px; text-align:center; background:#fff; color:#1b1b1b;
+  font:900 44px/1.1 "Archivo"; padding:10px 24px 12px; border-radius:36px; box-shadow:0 10px 24px rgba(0,0,0,.35); opacity:0; z-index:86; overflow-wrap:anywhere; }
+.busca-g small { display:block; font:700 20px/1.2 "Archivo"; letter-spacing:2px; text-transform:uppercase; color:#555; margin-bottom:4px; }
 .fim-ass { position:absolute; left:0; right:0; bottom:440px; text-align:center; font:600 30px "Archivo"; letter-spacing:1px; opacity:0; z-index:85; }
 """
 
@@ -383,6 +390,11 @@ def montar(r):
     Image.fromarray(rng.normal(128, 40, (960, 540)).clip(0, 255).astype(np.uint8)).resize((1080, 1920), Image.NEAREST).save(os.path.join(A, "grao.png"))
     corpo, js = est.cenas(ctx)
     if r.get("camera") == "canva": corpo, js = canva(corpo, js, ctx)
+    # "hashtag" no roteiro: selo "Dá um Google" com a hashtag na última cena, dentro da área segura
+    if r.get("hashtag"):
+        tag = "#" + str(r["hashtag"]).lstrip("#")
+        corpo.append(f'<div class="busca-g" id="busca-g"><small>Dá um Google</small>{esc(tag)}</div>')
+        js += f'tl.fromTo("#busca-g", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }}, {ctx.L[-1]["t"] + 0.4:.3f});\n'
     # crédito da foto embaixo, durante a cena que usa a foto
     for i in sorted(ctx.usadas):
         c = ctx.cred.get(f"c{i}", {}); L = ctx.L[i]
@@ -425,7 +437,7 @@ def montar(r):
     # cena de clipe é vídeo de verdade: sem os efeitos do estilo (bip, glitch, moeda) por cima dele nem na entrada dele
     janelas = [(L["t"] - 0.8, ctx.fim_cena(L["i"])) for L in ctx.L if L["c"].get("clipe")]
     ctx.sons = [s for s in ctx.sons if not any(a <= s[1] < b for a, b in janelas)]
-    k = getattr(est, "VOL_SFX", 1.0)  # volume dos efeitos do estilo
+    k = getattr(est, "VOL_SFX", 1.0) * float(r.get("volume_sfx", 1.0))  # volume dos efeitos do estilo, ajustável no roteiro
     ctx.sons = [(arq, t, dur, round(vol * k, 3)) for arq, t, dur, vol in ctx.sons]
     for L in ctx.L: ctx.aud(f"a/c{L['i']}.wav", L["t"], 1.0)
     ctx.aud("sfx/cama.wav", 0.0, est.VOL_CAMA, ctx.total)
@@ -441,6 +453,12 @@ def montar(r):
             if f and f not in fontes: fontes.append(f)
     open(os.path.join(r["_pasta"], f"{r['_nome']}-fontes.txt"), "w", encoding="utf-8").write(
         "Fontes:\n" + "\n".join(f"- {f}" for f in fontes) + "\n\n" + ctx.creditos() + "\nConteúdo orgânico, sem impulsionamento.\n")
+    # legenda do post: o texto que a IA escreveu em "post" (ou o título), as fontes, a hashtag e o aviso de conteúdo orgânico
+    tags = " ".join("#" + t.lstrip("#") for t in ([r["hashtag"]] if r.get("hashtag") else []) + list(r.get("hashtags") or []))
+    post = (r.get("post") or r["titulo"].capitalize() + ".").strip()
+    open(os.path.join(r["_pasta"], f"{r['_nome']}-post.txt"), "w", encoding="utf-8").write(
+        post + "\n\nFontes: " + "; ".join(fontes) + ".\n" + (f"\n{tags}\n" if tags else "") +
+        "\nVídeo feito com IA (voz sintética). Conteúdo orgânico, sem impulsionamento.\n")
     print(f"  {ctx.D}/index.html  ({ctx.total:.1f} s, {len(ctx.L)} cenas)")
     return ctx
 

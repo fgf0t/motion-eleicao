@@ -86,7 +86,7 @@ def main():
     if "--sem-render" in sys.argv:
         print(f"\nProjeto montado em {r['_proj']} (sem render)."); return
     final = render(r)
-    print(f"\nVÍDEO: {final}\nFONTES E CRÉDITOS PRO POST: {os.path.join(r['_pasta'], r['_nome'] + '-fontes.txt')}")
+    print(f"\nVÍDEO: {final}\nLEGENDA DO POST: {os.path.join(r['_pasta'], r['_nome'] + '-post.txt')}\nFONTES E CRÉDITOS: {os.path.join(r['_pasta'], r['_nome'] + '-fontes.txt')}")
 
 
 if __name__ == "__main__":
