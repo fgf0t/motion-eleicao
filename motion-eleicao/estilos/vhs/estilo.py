@@ -57,12 +57,12 @@ CSS = """
 .vcr { position:absolute; font:700 40px Maquina; color:#e9f1ea; letter-spacing:3px; text-shadow:0 0 10px rgba(200,255,220,.55), 3px 0 0 rgba(0,255,200,.35), -3px 0 0 rgba(120,255,120,.25); z-index:70; }
 .grita { position:absolute; left:40px; right:40px; text-align:center; font:900 150px/.92 Archivo; font-stretch:68%; color:#f1f4ee; text-transform:uppercase; letter-spacing:2px; opacity:0;
   text-shadow:6px 0 0 rgba(0,255,210,.45), -6px 0 0 rgba(140,255,90,.35), 0 0 40px rgba(0,0,0,.9); z-index:72; }
-.miud { position:absolute; left:60px; right:60px; text-align:center; font:700 34px Maquina; color:#cfe3d6; letter-spacing:4px; z-index:72; text-shadow:0 0 12px #000; opacity:0; }
+.miud { position:absolute; left:60px; right:150px; text-align:center; font:700 34px Maquina; color:#cfe3d6; letter-spacing:4px; z-index:72; text-shadow:0 0 12px #000; opacity:0; }
 .carimbo5 { position:absolute; left:0; right:0; margin:0 auto; width:fit-content; border:9px solid #e9f1ea; color:#e9f1ea; font:900 120px/1 Archivo; font-stretch:70%; padding:10px 30px; letter-spacing:6px; z-index:72; opacity:0; text-transform:uppercase; white-space:nowrap; }
 .tarja { position:absolute; left:0; width:1080px; background:#020302; z-index:66; }
 .desenho { position:absolute; left:140px; top:560px; width:800px; height:800px; opacity:0; overflow:visible; }
 .desenho path { fill:none; stroke:#d6f2df; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 6px rgba(150,255,200,.55)); }
-.cita5 { position:absolute; left:90px; right:90px; font:52px/1.3 JornalIt; color:#e9f1ea; z-index:72; text-shadow:0 0 16px #000; opacity:0; }
+.cita5 { position:absolute; left:90px; right:150px; font:52px/1.3 JornalIt; color:#e9f1ea; z-index:72; text-shadow:0 0 16px #000; opacity:0; }
 .cita5 small { display:block; font:700 26px Maquina; letter-spacing:3px; margin-top:14px; }
 .cred { color:#8fa797; z-index:80; }
 .fim-ass { color:#cfe3d6; z-index:80; }
