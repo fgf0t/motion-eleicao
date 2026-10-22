@@ -118,6 +118,32 @@ def pedido_gemini(texto, voz, vel):
     return base64.b64decode(r["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
 
 
+def fala_kie(texto, saida, voz):
+    """Gemini TTS pelo Kie (google/gemini-3-8-flash-tts, pago e barato): uma fala por pedido, sem instrução de estilo
+    (o 3.8 lê a instrução em voz alta). Chave em KIE_API_KEY ou ~/.config/motion-eleicao/chave-kie"""
+    import time
+    k = os.environ.get("KIE_API_KEY"); p = os.path.join(os.path.expanduser("~"), ".config", "motion-eleicao", "chave-kie")
+    if not k and os.path.exists(p): k = open(p).read().strip()
+    if not k: raise SystemExit("Falta a chave do Kie. Salve em " + p)
+    H = {"Content-Type": "application/json", "Authorization": f"Bearer {k}"}
+    corpo = {"model": "google/gemini-3-8-flash-tts", "input": {"speakers": [{"speaker_id": "Speaker 1", "voice_name": voz or "Algenib"}],
+             "dialogue_turns": [{"speaker_id": "Speaker 1", "text": texto}]}}
+    r = json.load(urllib.request.urlopen(urllib.request.Request("https://api.kie.ai/api/v1/jobs/createTask", data=json.dumps(corpo).encode(), headers=H), timeout=60))
+    if r.get("code") != 200: raise SystemExit(f"Kie recusou: {r}")
+    tid = r["data"]["taskId"]
+    for _ in range(120):
+        time.sleep(3)
+        d = json.load(urllib.request.urlopen(urllib.request.Request(f"https://api.kie.ai/api/v1/jobs/recordInfo?taskId={tid}", headers=H), timeout=60))["data"]
+        if d.get("state") == "success":
+            url = json.loads(d["resultJson"])["resultUrls"][0]
+            with tempfile.TemporaryDirectory() as tmp:
+                bruto = os.path.join(tmp, "k.wav"); urllib.request.urlretrieve(url, bruto)
+                ff("-i", bruto, "-ar", str(SR), "-ac", "1", saida)
+            return
+        if d.get("state") == "fail": raise SystemExit(f"Kie falhou: {d.get('failMsg')}")
+    raise SystemExit("Kie demorou demais pra devolver a fala.")
+
+
 def salva_pcm(pcm, saida):
     with tempfile.TemporaryDirectory() as tmp:
         bruto = os.path.join(tmp, "g.pcm"); open(bruto, "wb").write(pcm)
@@ -200,6 +226,7 @@ def gerar(r):
             shutil.copy(saida, os.path.join(pasta, f"c{i}.orig.wav"))  # guarda sem corte: a conferência pode desfazer
             if not os.path.exists(os.path.join(pasta, f"c{i}.sem_vicio")) and tira_vicio(saida, texto):
                 print("    (cortei um \"É\" que a voz pôs no começo)")
+        elif motor == "kie": fala_kie(texto, saida, v.get("voz"))
         elif motor in ("kokoro", "piper"): fala_local(motor, texto, saida, v.get("voz"), vel)
         else: fala_sistema(texto, saida, v.get("voz"), vel)
         open(marca, "w").write(chave)

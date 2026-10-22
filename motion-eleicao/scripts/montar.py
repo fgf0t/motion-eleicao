@@ -311,6 +311,65 @@ def carregar_estilo(nome):
     return mod
 
 
+def canva(corpo, js, ctx):
+    """"camera": "canva" no roteiro: cada cena vira um quadro espalhado numa lona grande (a mesma textura do fundo do
+    estilo) e uma câmera 3D viaja de um quadro pro outro, inclinada; os quadros anteriores ficam na lona."""
+    n = len(ctx.L); ult = n - 1
+    APELIDO = {"topo": 0, "pasta": 0, "dfim": ult}
+    def cena_de(item):
+        tag = item.lstrip()[:400]
+        m = re.search(r'\bc[af](\d+)\b', tag.split(">")[0])
+        if m: return int(m.group(1))
+        m = re.search(r'id="([a-z]+?)(\d+)(?:-\d+)?"', tag.split(">")[0])
+        if m: return ult if m.group(1) == "g" else min(int(m.group(2)), ult)
+        m = re.search(r'id="([\w-]+)"', tag.split(">")[0])
+        return APELIDO.get(m.group(1)) if m else None
+    grupos, fora, pos = {}, [], None
+    for item in corpo:
+        k = cena_de(item) if item.lstrip().startswith("<") and not item.lstrip().startswith("</") else None
+        if k is None or "legenda" in item[:200] or 'class="leg' in item[:200]:
+            fora.append(item); continue
+        if pos is None: pos = len(fora); fora.append(None)
+        grupos.setdefault(k, []).append(item)
+    if pos is None: return corpo, js
+    # quadros em zigue-zague descendo a lona, cada um com giro e profundidade próprios
+    Q = [((-560 if k % 2 == 0 else 560) + (k % 3 - 1) * 120, k * 1250, (-5, 4, -3, 6, -4, 3, -6, 5)[k % 8], (0, -260, -120)[k % 3]) for k in range(n)]
+    mundo = ['<div id="cam-c" style="position:absolute; inset:0; perspective:1500px; perspective-origin:50% 45%; z-index:1">'
+             '<div id="giro-c" style="position:absolute; inset:0; transform-style:preserve-3d; transform-origin:540px 960px">'
+             '<div id="mundo-c" style="position:absolute; left:0; top:0; width:1080px; height:1920px; transform-style:preserve-3d">'
+             f'<div id="lona-c" style="position:absolute; left:-4000px; top:-4000px; width:9080px; height:{n * 1250 + 9000}px; transform:translateZ(-700px) scale(1.5)"></div>']
+    for k in sorted(grupos):
+        x, y, r_, z = Q[k]
+        mundo.append(f'<div class="quadro-c" style="position:absolute; left:0; top:0; width:1080px; height:1920px; '
+                     f'transform:translate3d({x}px, {y}px, {z}px) rotate({r_}deg)">' + "\n".join(grupos[k]) + '</div>')
+    mundo.append('</div></div></div>')
+    fora[pos] = "\n".join(mundo)
+    fora.append("<style>.quadro-c .fonte-d { background:#efe6cf; color:#1b1b1b; padding:6px 14px; width:fit-content; right:auto; box-shadow:0 6px 14px rgba(0,0,0,.45); }</style>")
+    # nos quadros, nada some nem sai voando: tira os "opacity: 0" de saída dos elementos que estão na lona
+    dentro = set(re.findall(r'id="([\w-]+)"', "\n".join(mundo))) | {f"{p}{k}" for k in range(n) for p in ("ca", "cf")}
+    def tira(m):
+        sels = [s.strip().lstrip("#.") for s in m.group(2).split(",")]
+        return "" if all(s in dentro for s in sels) else m.group(0)
+    js = re.sub(r'tl\.(to|set)\("([^"]+)", \{ opacity: 0(?:,[^}]*)? \}, [\d.]+\);', tira, js)
+    cam = ('{ const src = document.querySelector("#mesa-d, #fundo-b, #fundo"), lona = document.querySelector("#lona-c");\n'
+           '  if (src && lona) { const s = getComputedStyle(src); lona.style.backgroundColor = s.backgroundColor; lona.style.backgroundImage = s.backgroundImage; lona.style.backgroundSize = s.backgroundSize; } }\n')
+    for k in range(n):
+        x, y, r_, z = Q[k]; s = 1 if k % 2 == 0 else -1
+        alvo = f'x: {-x}, y: {-y}, z: {-z}'
+        giro = f'rotation: {-r_}, rotationX: {7 * s}, rotationY: {-9 * s}, scale: 1'
+        if k == 0:
+            cam += f'tl.set("#mundo-c", {{ {alvo} }}, 0); tl.fromTo("#giro-c", {{ rotation: {-r_ + 8}, rotationX: 18, rotationY: -14, scale: .8 }}, {{ {giro}, duration: 1.1, ease: "power3.out" }}, 0);\n'
+        else:
+            t = ctx.L[k]["t"] - 0.6
+            cam += (f'tl.to("#mundo-c", {{ {alvo}, duration: 0.75, ease: "power3.inOut" }}, {t:.3f}); '
+                    f'tl.to("#giro-c", {{ keyframes: [{{ rotationX: {14 * s}, rotationY: {-16 * s}, scale: .78, duration: 0.38, ease: "power2.in" }}, '
+                    f'{{ {giro}, duration: 0.37, ease: "power2.out" }}] }}, {t:.3f});\n')
+        fim = ctx.fim_cena(k) - 0.6 if k < ult else ctx.total
+        ini = (ctx.L[k]["t"] + 0.15) if k else 1.1
+        if fim > ini: cam += f'tl.to("#cam-c", {{ scale: {1.04 + 0.02 * (k % 2)}, duration: {fim - ini:.2f}, ease: "none", overwrite: false }}, {ini:.3f}); tl.set("#cam-c", {{ scale: 1 }}, {fim + 0.3:.3f});\n'
+    return fora, cam + js
+
+
 def montar(r):
     estilo = r["estilo"]
     passo(f"Montagem (estilo {estilo})")
@@ -323,6 +382,7 @@ def montar(r):
     rng = np.random.default_rng(3)
     Image.fromarray(rng.normal(128, 40, (960, 540)).clip(0, 255).astype(np.uint8)).resize((1080, 1920), Image.NEAREST).save(os.path.join(A, "grao.png"))
     corpo, js = est.cenas(ctx)
+    if r.get("camera") == "canva": corpo, js = canva(corpo, js, ctx)
     # crédito da foto embaixo, durante a cena que usa a foto
     for i in sorted(ctx.usadas):
         c = ctx.cred.get(f"c{i}", {}); L = ctx.L[i]

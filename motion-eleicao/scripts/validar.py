@@ -59,8 +59,8 @@ def validar(r):
     if not tem_fonte:
         erros.append("nenhuma cena tem \"fonte\". Vídeo sem fonte não sai.")
     v = r.get("voz") or {}
-    if v.get("motor", "auto") not in ("auto", "sistema", "kokoro", "piper", "voicestudio", "gemini"):
-        erros.append('"voz.motor" tem que ser "sistema", "kokoro", "piper", "voicestudio" ou "gemini"')
+    if v.get("motor", "auto") not in ("auto", "sistema", "kokoro", "piper", "voicestudio", "gemini", "kie"):
+        erros.append('"voz.motor" tem que ser "sistema", "kokoro", "piper", "voicestudio", "gemini" ou "kie"')
     if v.get("motor") == "voicestudio" and not v.get("perfil"):
         erros.append('voz VoiceStudio sem "perfil" (o id da SUA voz clonada). Veja com: python3 scripts/voz.py --listar')
     if r.get("impulsionar"):
