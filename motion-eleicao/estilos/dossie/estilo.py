@@ -27,7 +27,7 @@ CSS = """
 .cita-d { position:absolute; background:#f4f1e8; color:#222; padding:26px 32px; font:44px/1.25 JornalIt; box-shadow:0 10px 18px rgba(0,0,0,.35); z-index:4; }
 .cita-d small { display:block; margin-top:10px; font:700 22px Maquina; letter-spacing:1px; }
 .carimbo { position:absolute; border:9px solid #2c4bc9; color:#2c4bc9; font:900 88px/1 Archivo; font-stretch:80%; padding:10px 26px; letter-spacing:4px; mix-blend-mode:multiply; opacity:0; z-index:7; text-transform:uppercase; white-space:nowrap; }
-.fonte-d { position:absolute; left:90px; right:90px; font:700 25px Maquina; letter-spacing:1px; color:#2a1e10; z-index:8; }
+.fonte-d { position:absolute; left:90px; right:150px; font:700 25px Maquina; letter-spacing:1px; color:#2a1e10; z-index:8; }
 .grande { position:absolute; left:60px; right:60px; text-align:left; font:900 150px/.9 Archivo; font-stretch:72%; color:#f4ecd8; text-transform:uppercase; text-shadow:0 8px 30px rgba(0,0,0,.6); z-index:9; }
 .cred { color:#cfc4ab; }
 .fim-ass { color:#efe6cf; }
@@ -121,7 +121,7 @@ def cenas(x):
             js += f'tl.fromTo("#cb{k}", {{ opacity: 0, scale: 2.6 }}, {{ opacity: .92, scale: 1, duration: 0.14, ease: "power4.in" }}, {tb:.3f});\n'; x.aud("sfx/carimbo.wav", tb + 0.08, 0.8)
             ids.append(f"#cb{k}")
         if cena.get("fonte"):
-            c.append(f'<div class="fonte-d el" id="fo{k}" style="top:1470px">FONTE: {esc(cena["fonte"]).upper()}</div>')
+            c.append(f'<div class="fonte-d el" id="fo{k}" style="top:1380px">FONTE: {esc(cena["fonte"]).upper()}</div>')
             js += f'tl.to("#fo{k}", {{ opacity: 1, duration: 0.2 }}, {L["t"] + 0.6:.3f});\n'; ids.append(f"#fo{k}")
         # saída: cada cena sai pra um lado
         saida = f'x: {-1200 * sgn}, rotation: {-8 * sgn}' if k % 3 != 2 else 'y: 1500'
@@ -136,7 +136,7 @@ def cenas(x):
         c.append(f'<div class="fim-ass" id="ass">{x.assinatura()}</div>')
         js += f'tl.to("#ass", {{ opacity: 1, duration: 0.4 }}, {fim + 0.5:.3f});\n'
     leg, ljs = x.legenda('font:800 50px/1.25 Archivo; color:#111;', "#111", "background:#f4f1e8; padding:6px 16px; box-decoration-break:clone; -webkit-box-decoration-break:clone; box-shadow:6px 6px 0 #111",
-                         topo=1600, ativa_prop="backgroundColor")
+                         topo=1440, ativa_prop="backgroundColor")
     leg = leg.replace('class="leg"', 'class="leg" ')
     c.append(leg); js += ljs.replace('backgroundColor: "#111"', 'backgroundColor: "#f2c230"')
     return c, js
