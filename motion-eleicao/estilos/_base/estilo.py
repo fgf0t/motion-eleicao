@@ -67,6 +67,10 @@ def com_config(caminho):
                "pixel": f"border:12px solid {P['texto']}; outline:6px solid {P['destaque']}; outline-offset:-24px; image-rendering:pixelated;",
                "nenhuma": ""}.get(cfg["foto"].get("moldura", "borda"), "")
     filtro = {"pb": "grayscale(1) contrast(1.15)", "tiras": "grayscale(1) contrast(1.2)", "vhs": "grayscale(.85) contrast(1.35) brightness(.78)", "cor": "none"}.get(cfg["foto"].get("modo"), "none")
+    tarja = contraste(P["destaque"], F["cor"]) < 3  # amarelo solto em fundo claro não se lê: vira tarja
+    tinta = cor_sobre(P["destaque"])
+    num_cor = f"color:{tinta}; background:{P['destaque']}; width:fit-content; margin:0 auto; padding:.02em .14em 0; transform:rotate(-2deg);" if tarja else f"color:{P['destaque']};"
+    li_cor = f"display:inline-block; color:{tinta}; background:{P['destaque']}; padding:6px 16px 2px; margin-top:6px;" if tarja else f"display:block; color:{P['destaque']};"
     m.CSS = f"""
 :root {{ --papel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 0.25 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }}
 html, body {{ background:{F['cor']}; }}
@@ -75,17 +79,17 @@ html, body {{ background:{F['cor']}; }}
 .foto-b img {{ display:block; width:100%; height:100%; object-fit:cover; filter:{filtro}; }}
 .foto-b.cheia {{ left:-40px; top:-40px; width:1160px; height:2000px; border:0; padding:0; outline:0; box-shadow:none; background:none; }}
 .foto-b.cheia img {{ filter:{filtro} brightness(.55); }}
-.tit-b {{ position:absolute; left:60px; right:60px; text-align:center; color:{P['texto']}; opacity:0; z-index:10; {"text-transform:uppercase;" if cfg.get("titulo_caixa_alta") else ""} }}
-.num-b {{ position:absolute; left:0; right:0; text-align:center; color:{P['destaque']}; opacity:0; z-index:11; white-space:nowrap; font:900 300px/1 Archivo; font-stretch:72%; }}
-.det-b {{ position:absolute; left:90px; right:90px; text-align:center; color:{P['texto']}; font:400 46px/1.2 {_fonte_texto(cfg)}; opacity:0; z-index:10; }}
+.tit-b {{ position:absolute; left:90px; right:150px; text-align:center; color:{P['texto']}; opacity:0; z-index:10; {"text-transform:uppercase;" if cfg.get("titulo_caixa_alta") else ""} }}
+.num-b {{ position:absolute; left:0; right:0; text-align:center; {num_cor} opacity:0; z-index:11; white-space:nowrap; font:900 300px/1 Archivo; font-stretch:72%; }}
+.det-b {{ position:absolute; left:90px; right:150px; text-align:center; color:{P['texto']}; font:400 46px/1.2 {_fonte_texto(cfg)}; opacity:0; z-index:10; }}
 .carimbo-b {{ position:absolute; left:0; right:0; margin:0 auto; width:fit-content; opacity:0; z-index:12; white-space:nowrap; text-transform:uppercase; font:900 70px/1 Archivo; font-stretch:78%; padding:10px 24px;
   {"background:" + cfg['carimbo']['cor'] + "; color:" + F['cor'] + ";" if cfg['carimbo'].get('forma') == 'faixa' else "border:8px solid " + cfg['carimbo']['cor'] + "; color:" + cfg['carimbo']['cor'] + ";"} }}
-.cita-b {{ position:absolute; left:80px; right:80px; background:{P['papel']}; color:#1b1b1b; padding:30px 36px; font:46px/1.25 JornalIt; opacity:0; z-index:10; box-shadow:0 12px 24px rgba(0,0,0,.4); }}
+.cita-b {{ position:absolute; left:80px; right:150px; background:{P['papel']}; color:#1b1b1b; padding:30px 36px; font:46px/1.25 JornalIt; opacity:0; z-index:10; box-shadow:0 12px 24px rgba(0,0,0,.4); }}
 .cita-b small {{ display:block; margin-top:12px; font:700 22px Maquina; letter-spacing:1px; }}
-.li-b {{ position:absolute; left:90px; right:90px; opacity:0; z-index:10; color:{P['texto']}; font:400 36px/1.15 {_fonte_texto(cfg)}; }}
-.li-b b {{ display:block; color:{P['destaque']}; font:900 56px/1 Archivo; font-stretch:75%; text-transform:uppercase; }}
-.li-b small {{ font:700 20px Maquina; opacity:.7; }}
-.fonte-b {{ position:absolute; left:70px; right:70px; text-align:center; font:700 23px Maquina; letter-spacing:1px; color:{P.get('fonte', P['texto'])}; opacity:0; z-index:12; }}
+.li-b {{ position:absolute; left:90px; right:150px; opacity:0; z-index:10; color:{P['texto']}; font:400 36px/1.15 {_fonte_texto(cfg)}; }}
+.li-b b {{ {li_cor} font:900 56px/1 Archivo; font-stretch:75%; text-transform:uppercase; }}
+.li-b small {{ display:block; margin-top:6px; font:700 20px Maquina; opacity:.7; }}
+.fonte-b {{ position:absolute; left:70px; right:150px; text-align:center; font:700 23px Maquina; letter-spacing:1px; color:{P.get('fonte', P['texto'])}; opacity:0; z-index:12; }}
 .faixa-b {{ position:absolute; left:0; width:1080px; opacity:0; z-index:60; }}
 .cam-b {{ position:absolute; opacity:0; }}
 .jornal-b {{ background-color:#e6dcc4; background-image:var(--papel), repeating-linear-gradient(0deg, rgba(40,30,20,.55) 0 3px, transparent 3px 12px); filter:drop-shadow(6px 8px 0 rgba(0,0,0,.35)); }}
@@ -130,6 +134,23 @@ tl.to = (t, v, p) => _to(t, emDegrau(v), p); tl.from = (t, v, p) => _from(t, emD
 """
     m.cenas = lambda x: _cenas(x, cfg)
     return m
+
+
+def _lum(h):
+    c = [int(h.lstrip("#")[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+    c = [v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4 for v in c]
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+
+
+def contraste(a, b):
+    """razão de contraste WCAG entre duas cores #rrggbb (3 = mínimo pra número grande)"""
+    try: la, lb = _lum(a), _lum(b)
+    except ValueError: return 21
+    return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+
+
+def cor_sobre(fundo):
+    return "#1b1b1b" if contraste(fundo, "#1b1b1b") >= contraste(fundo, "#ffffff") else "#ffffff"
 
 
 def _fonte_texto(cfg):
@@ -182,8 +203,11 @@ def _cenas(x, cfg):
     x.aud("sfx/boom.wav", 0.0, 0.3, 4.0)
     for k, L in enumerate(x.L):
         cena, t0, t1 = L["c"], L["t"] - 0.1, x.fim_cena(k); sgn = 1 if k % 2 == 0 else -1
+        if k and x.r.get("camera") == "canva": t0 = L["t"] - 0.6  # a câmera sai rumo a um quadro que já tem foto e título
+        if k == 0: t0 = 0.0  # o primeiro quadro do vídeo já abre montado
+        ti = t0 + 0.1  # entrada do título
         if k == ult:
-            txt = cena.get("tela") or cena["fala"]; tam = cabe(txt, 200, 960, k_larg, 4)
+            txt = cena.get("tela") or cena["fala"]; tam = cabe(txt, 200, 840, k_larg, 4)
             c.append(titulo(f"t{k}", txt, 520, tam, fonte_t, k))
             js += entra(cfg, f"#t{k}", L["t"], x.total, sgn); x.aud("sfx/thump.wav", L["t"], 0.5)
             if cena.get("detalhe"):
@@ -194,19 +218,20 @@ def _cenas(x, cfg):
                          f'background:{P["destaque"]}; color:{cor_t}; font-weight:700; font-size:56px; padding:12px 30px; transform:rotate(-2deg)">{esc(cena["detalhe"])}</div>')
                 js += entra(cfg, f"#d{k}", L["t"] + (L["fim"] - L["t"]) * 0.6, x.total)
             continue
-        y = 260
+        y = 300
         tela = cena.get("tela")
-        tam_t = cabe(tela, 150, 960, k_larg, 2) if tela else 0
-        lin_t = max(1, round(len(tela) * tam_t * k_larg / 960 + .4)) if tela else 0
+        tam_t = cabe(tela, 150, 840, k_larg, 2) if tela else 0
+        lin_t = max(1, round(len(tela) * tam_t * k_larg / 840 + .4)) if tela else 0
         tam_n = cabe(cena["numero"], 240, 1000, .55, 1) if cena.get("numero") else 0
         alt_txt = (tam_t * 1.05 * lin_t + 40) + tam_n * 1.05 + (90 if cena.get("detalhe") else 0) + (110 if cena.get("carimbo") else 0)
         f = x.foto(k, modo_foto, 900) if not (cena.get("lista") or cena.get("citacao")) else None
+        tem_foto = bool(f)
         if f:
             if cheia:
                 c.append(f'<div class="foto-b cheia" id="f{k}"><img src="{f["src"]}"></div>')
                 js += f'tl.set("#f{k}", {{ opacity: 1 }}, {t0:.3f}); tl.fromTo("#f{k}", {{ scale: 1.02 }}, {{ scale: 1.12, duration: {t1 - t0:.2f}, ease: "none" }}, {t0:.3f}); tl.set("#f{k}", {{ opacity: 0 }}, {t1:.3f});\n'
             else:
-                alt = max(300, min(640, 1400 - y - 90 - alt_txt))
+                alt = max(300, min(640, 1320 - y - 90 - alt_txt))
                 w = int(min(860, alt * f["w"] / f["h"])); h = int(w * f["h"] / f["w"])
                 c.extend(camadas(cfg, k, 540 - w / 2, y, w, h, atras=True))
                 if cfg["foto"].get("modo") == "tiras":  # foto cortada em 3 tiras deslocadas
@@ -221,22 +246,23 @@ def _cenas(x, cfg):
         if tela:
             tam = tam_t
             c.append(titulo(f"t{k}", tela, y, tam, fonte_t, k))
-            js += entra(cfg, f"#t{k}", L["t"], t1, sgn); x.aud("sfx/pop.wav", L["t"], 0.35)
+            js += entra(cfg, f"#t{k}", ti, t1, sgn); x.aud("sfx/pop.wav", ti, 0.35)
             y += int(tam * 1.05 * lin_t) + 40
         if cena.get("numero"):
-            tam = tam_n; tn = x.bate(L, cena["numero"], 0.4)
+            tam = tam_n; tn = x.bate(L, cena["numero"], 0.4) if tem_foto else ti + 0.25  # sem foto, o número preenche o quadro desde o início
             c.append(f'<div class="num-b" id="n{k}" style="top:{y}px; font-size:{tam}px">{esc(cena["numero"])}</div>')
             js += entra(cfg, f"#n{k}", tn, t1, sgn); x.aud("sfx/thump.wav", tn, 0.6)
             y += int(tam * 1.05)
         if cena.get("detalhe"):
             c.append(f'<div class="det-b" id="d{k}" style="top:{y}px">{esc(cena["detalhe"])}</div>')
-            js += entra(cfg, f"#d{k}", x.bate(L, None, 0.5), t1, sgn); y += 90
+            js += entra(cfg, f"#d{k}", x.bate(L, None, 0.5) if tem_foto else ti + 0.45, t1, sgn); y += 90
         if cena.get("citacao"):
             quem = f'<small>{esc(cena.get("quem", "")).upper()}</small>' if cena.get("quem") else ""
             c.append(f'<div class="cita-b" id="q{k}" style="top:{y}px">“{esc(cena["citacao"])}”{quem}</div>')
-            js += entra(cfg, f"#q{k}", x.bate(L, None, 0.3), t1, sgn); y += 200 + 55 * (len(cena["citacao"]) // 30)
+            js += entra(cfg, f"#q{k}", ti + 0.35, t1, sgn); y += 200 + 55 * (len(cena["citacao"]) // 30)
+        n_li = len(cena.get("lista") or [])
         for j, it in enumerate(cena.get("lista") or []):
-            tj = L["fim"] + 0.2 + j * 0.7
+            tj = ti + 0.35 + j * max(0.6, (L["fim"] - ti - 0.6) / max(1, n_li))  # uma por vez ao longo da fala, a primeira logo no começo
             c.append(f'<div class="li-b" id="l{k}-{j}" style="top:{y}px">{esc(it.get("q", ""))}<b>{esc(it.get("a", ""))}</b><small>{esc(it.get("fonte", "")).upper()}</small></div>')
             js += entra(cfg, f"#l{k}-{j}", tj, t1, sgn); x.aud("sfx/thump.wav", tj, 0.45); y += 170
         if cena.get("carimbo"):
@@ -245,7 +271,7 @@ def _cenas(x, cfg):
             js += f'tl.fromTo("#cb{k}", {{ opacity: 0, scale: 2.2 }}, {{ opacity: 1, scale: 1, duration: 0.12, ease: "power4.in" }}, {tc:.3f}); tl.set("#cb{k}", {{ opacity: 0 }}, {t1:.3f});\n'
             x.aud("sfx/carimbo.wav", tc, 0.6)
         if cena.get("fonte"):
-            c.append(f'<div class="fonte-b" id="o{k}" style="top:1460px">FONTE: {esc(cena["fonte"]).upper()}</div>')
+            c.append(f'<div class="fonte-b" id="o{k}" style="top:1385px">FONTE: {esc(cena["fonte"]).upper()}</div>')
             js += f'tl.to("#o{k}", {{ opacity: .9, duration: 0.2 }}, {L["t"] + 0.5:.3f}); tl.set("#o{k}", {{ opacity: 0 }}, {t1:.3f});\n'
         # transição pra próxima cena
         if k + 1 < len(x.L):
@@ -275,6 +301,6 @@ def _cenas(x, cfg):
     lg = cfg["legenda"]
     fundo = f"background:{lg['fundo']}; padding:6px 16px; box-decoration-break:clone; -webkit-box-decoration-break:clone" if lg.get("fundo") else ""
     fl = {"Maquina": "700 40px/1.3 Maquina", "Patrick Hand": "400 52px/1.2 'Patrick Hand'", "Pixel": "400 30px/1.6 Pixel", "Pixel2": "400 44px/1.3 Pixel2"}.get(lg.get("fonte"), "800 46px/1.25 Archivo")
-    leg, ljs = x.legenda(f"font:{fl}; color:{lg['cor']};", lg["ativa"], fundo, topo=1560)
+    leg, ljs = x.legenda(f"font:{fl}; color:{lg['cor']};", lg["ativa"], fundo, topo=1440)
     corpo.append(leg); js += ljs
     return corpo, js
