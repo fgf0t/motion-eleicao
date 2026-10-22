@@ -35,6 +35,9 @@ imagem `SKILL/estilos/galeria.jpg`. Os estilos que vêm com a skill:
 | `pesquise` | "não acredita em mim? pesquisa", perguntas e respostas |
 | `dados` | 2 a 4 números oficiais (economia, emprego, segurança) |
 | `pixel` | explicar dados e regras passo a passo, com ícones, linha do tempo ou gráfico |
+| `zine-punk` | contradição, cobrança, "abre ou não abre" |
+| `editorial-grunge` | explicar uma proposta passo a passo, jeito de explainer |
+| `caderno-espiral` | comparar pessoas ou planos lado a lado |
 
 **Pautas prontas**: se a pessoa pediu um vídeo sem dizer a pauta, rode `python3 SKILL/scripts/estilos.py pautas` e pergunte:
 "Quer fazer sobre uma destas (fatos já checados) ou sobre outra pauta?", mostrando a lista com uma linha cada.
@@ -118,7 +121,7 @@ o `roteiro.json`. Comece copiando o exemplo do estilo escolhido em `SKILL/exempl
 `bate` é opcional: sem ele, o número entra quando a fala diz o número e o carimbo entra no fim da fala.
 Se a busca da `foto` não achar nada livre, o script avisa e a cena sai sem foto (o vídeo continua).
 
-Campos do topo: `titulo` (vira o nome do arquivo), `estilo`, `chapeu` (opcional, etiqueta do topo no `dossie`),
+Campos do topo: `titulo` (vira o nome do arquivo), `estilo`, `camera` (opcional: `"canva"` espalha as cenas numa lona grande e a câmera 3D viaja de uma pra outra), `chapeu` (opcional, etiqueta do topo no `dossie`),
 `data_vhs` (data na tela do `vhs`, ex. `"02.02.2021"`), `assinatura` (opcional) e `voz` (só se a pessoa pedir outra voz pra este vídeo, ver abaixo).
 
 **Fotos: regra da skill.** A foto nunca pode trazer informação de outra pessoa ou de outro lugar: nada de rosto,
