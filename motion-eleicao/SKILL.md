@@ -122,7 +122,9 @@ o `roteiro.json`. Comece copiando o exemplo do estilo escolhido em `SKILL/exempl
 Se a busca da `foto` não achar nada livre, o script avisa e a cena sai sem foto (o vídeo continua).
 
 Campos do topo: `titulo` (vira o nome do arquivo), `estilo`, `camera` (opcional: `"canva"` espalha as cenas numa lona grande e a câmera 3D viaja de uma pra outra), `chapeu` (opcional, etiqueta do topo no `dossie`),
-`data_vhs` (data na tela do `vhs`, ex. `"02.02.2021"`), `assinatura` (opcional) e `voz` (só se a pessoa pedir outra voz pra este vídeo, ver abaixo).
+`data_vhs` (data na tela do `vhs`, ex. `"02.02.2021"`), `assinatura` (opcional), `hashtag` (a hashtag que o povo está buscando sobre a pauta,
+ex. `"FlavioCasoAnaClara"`: entra no fim do vídeo num selo "Dá um Google" e na legenda do post), `hashtags` (outras, só na legenda),
+`post` (a legenda do post, ver abaixo), `volume_sfx` (efeitos mais baixos ou mais altos que o padrão, ex. `0.5`; a voz não muda) e `voz` (só se a pessoa pedir outra voz pra este vídeo, ver abaixo).
 
 **Fotos: regra da skill.** A foto nunca pode trazer informação de outra pessoa ou de outro lugar: nada de rosto,
 placa, legenda, texto legível ou lugar de outro país. Por isso a ordem é:
@@ -282,6 +284,16 @@ Mais efeitos sonoros: os sons vêm com a skill (gerados em código ou CC0). Se a
 dela do Freesound: `python3 SKILL/scripts/baixar_sons.py "whoosh fast" whoosh` (só baixa CC0; ver README).
 
 Exemplos completos de cada estilo: `SKILL/exemplos/`.
+
+**Legenda do post**: em todo vídeo, escreva no campo `post` do roteiro uma legenda curta pro post (2 a 4 frases, no tom da
+pessoa, sem dois-pontos de chamada, sem "assassino", "ladrão", "miliciano" ou crime sem condenação). Se a pauta tem uma
+hashtag em alta (pesquise; ex. `#FlavioCasoAnaClara` no caso Ana Clara), ponha em `hashtag`. A skill monta o
+`<titulo>-post.txt` com a legenda, as fontes, as hashtags e o aviso de IA, pronto pra colar. Mostre esse texto pra pessoa no fim.
+
+**Área segura (todos os estilos)**: Reels e TikTok cobrem o topo (até 220 px), a base (de 1500 px pra baixo) e, na
+direita, a coluna de ícones (x > 940, de 750 a 1500 px). Legenda, fonte, número e crédito ficam fora dessas faixas: o
+montador já limita a legenda e os créditos (`SEGURA` em `scripts/montar.py`). Estilo novo ou efeito novo segue a mesma
+regra; confira num quadro antes de entregar.
 
 **Mexer em animação**: antes de escrever ou mudar qualquer movimento em código (efeito novo num `estilo.py`, câmera,
 transição, estilo novo que precise de mais que o `config.json`), leia `SKILL/estilos/_base/MOVIMENTO.md`: pra quê
