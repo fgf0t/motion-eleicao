@@ -8,12 +8,12 @@ CSS = """
 #fundo { position:absolute; inset:0; background:#050505; }
 .ret { position:absolute; left:50%; transform:translateX(-50%); opacity:0; }
 .ret img { display:block; width:100%; }
-.perg { position:absolute; left:80px; right:80px; top:1010px; text-align:center; font:300 64px/1.12 Archivo; color:#f1f1ec; letter-spacing:-0.5px; opacity:0; z-index:20; }
+.perg { position:absolute; left:80px; right:150px; top:1010px; text-align:center; font:300 64px/1.12 Archivo; color:#f1f1ec; letter-spacing:-0.5px; opacity:0; z-index:20; }
 .perg .p { opacity:0; }
-.gig { position:absolute; left:40px; right:40px; text-align:center; font:900 230px/.86 Archivo; font-stretch:75%; color:#f1f1ec; text-transform:uppercase; opacity:0; z-index:20; }
+.gig { position:absolute; left:60px; right:150px; text-align:center; font:900 230px/.86 Archivo; font-stretch:75%; color:#f1f1ec; text-transform:uppercase; opacity:0; z-index:20; }
 .selo { position:absolute; left:0; right:0; margin:0 auto; width:fit-content; border:6px solid #f2c230; color:#f2c230; font:900 64px/1 Archivo; font-stretch:75%; padding:10px 22px; text-transform:uppercase; opacity:0; z-index:21; }
-.fonte { position:absolute; left:80px; right:80px; text-align:center; font:700 23px Maquina; color:#8f8f88; letter-spacing:1px; opacity:0; z-index:20; }
-.resp { position:absolute; left:90px; right:90px; opacity:0; z-index:20; }
+.fonte { position:absolute; left:80px; right:150px; text-align:center; font:700 23px Maquina; color:#8f8f88; letter-spacing:1px; opacity:0; z-index:20; }
+.resp { position:absolute; left:90px; right:150px; opacity:0; z-index:20; }
 .resp .n { font:300 30px Archivo; color:#9a9a92; }
 .resp .q { font:300 34px/1.15 Archivo; color:#d8d8d0; }
 .resp .a { font:900 58px/1 Archivo; font-stretch:75%; color:#f2c230; text-transform:uppercase; margin-top:6px; }
@@ -51,7 +51,7 @@ def cenas(x):
             x.aud("sfx/thump.wav", tb, 0.55)
             if k == ult and cena.get("detalhe"):
                 escrita.add(k)
-                c.append(f'<div class="perg" id="d{k}" style="top:1290px; font-size:56px; font-weight:400">{esc(cena["detalhe"])}</div>')
+                c.append(f'<div class="perg" id="d{k}" style="top:1270px; font-size:56px; font-weight:400">{esc(cena["detalhe"])}</div>')
                 js += f'tl.to("#d{k}", {{ opacity: 1, duration: 0.3 }}, {L["t"] + (L["fim"] - L["t"]) * 0.6:.3f});\n'
         elif tem_lista:
             for j, it in enumerate(cena["lista"]):
@@ -83,7 +83,7 @@ def cenas(x):
             js += f'tl.fromTo("#s{k}", {{ opacity: 0, scale: 2 }}, {{ opacity: 1, scale: 1, duration: 0.12, ease: "power4.in" }}, {tb:.3f}); tl.set("#s{k}", {{ opacity: 0 }}, {t1:.3f});\n'
             x.aud("sfx/carimbo.wav", tb + 0.05, 0.6)
         if cena.get("fonte") and not tem_lista:
-            c.append(f'<div class="fonte" id="o{k}" style="top:1470px">FONTE: {esc(cena["fonte"]).upper()}</div>')
+            c.append(f'<div class="fonte" id="o{k}" style="top:1395px">FONTE: {esc(cena["fonte"]).upper()}</div>')
             js += f'tl.to("#o{k}", {{ opacity: 1, duration: 0.3 }}, {L["t"] + 0.4:.3f}); tl.set("#o{k}", {{ opacity: 0 }}, {t1:.3f});\n'
     fim = x.L[-1]["fim"]
     c.append(f'<div class="cred" id="cred">{esc(x.creditos())}</div>')
@@ -91,7 +91,7 @@ def cenas(x):
     if x.assinatura():
         c.append(f'<div class="fim-ass" id="ass">{x.assinatura()}</div>')
         js += f'tl.to("#ass", {{ opacity: 1, duration: 0.4 }}, {fim + 0.5:.3f});\n'
-    leg, ljs = x.legenda("font:700 34px/1.25 Archivo; color:#f2c230;", "#ffffff", topo=1560, extra_css="z-index:30", pular=escrita)
+    leg, ljs = x.legenda("font:700 34px/1.25 Archivo; color:#f2c230;", "#ffffff", topo=1445, extra_css="z-index:30", pular=escrita)
     c.append(leg); js += ljs
     x.aud("sfx/boom.wav", 0.0, 0.3, 4.0)
     return c, js
