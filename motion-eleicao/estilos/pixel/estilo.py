@@ -67,17 +67,17 @@ html, body {{ background:{FUNDO}; }}
 .rot-px {{ position:absolute; left:60px; right:60px; text-align:center; font:700 44px/1.2 Pixel2; color:{VERDE}; letter-spacing:3px; text-transform:uppercase; }}
 .num-px {{ position:absolute; left:0; right:0; text-align:center; font:400 120px/1 Pixel; color:{PAPEL}; text-shadow:8px 8px 0 #111; white-space:nowrap; text-transform:uppercase; }}
 .degrau-px {{ position:absolute; background:#4a4a52; box-shadow:inset 0 8px 0 #6a6a74; }}
-.sub-px {{ position:absolute; left:80px; right:80px; text-align:center; font:400 38px/1.35 Pixel2; color:{PAPEL}; }}
+.sub-px {{ position:absolute; left:80px; right:150px; text-align:center; font:400 38px/1.35 Pixel2; color:{PAPEL}; }}
 .selo-px {{ position:absolute; left:0; right:0; margin:0 auto; width:fit-content; padding:16px 22px; font:400 30px/1.2 Pixel; color:{FUNDO}; background:{AMARELO}; box-shadow:8px 8px 0 #111; opacity:0; text-transform:uppercase; white-space:nowrap; }}
-.fonte-px {{ position:absolute; left:90px; right:90px; top:1390px; font:400 22px/1.4 Pixel2; color:{VERDE}; letter-spacing:1px; border-left:8px solid {VERDE}; padding-left:14px; text-transform:uppercase; }}
+.fonte-px {{ position:absolute; left:90px; right:150px; top:1370px; font:400 22px/1.4 Pixel2; color:{VERDE}; letter-spacing:1px; border-left:8px solid {VERDE}; padding-left:14px; text-transform:uppercase; }}
 .ic-px {{ position:absolute; }}
 .ic-px svg {{ display:block; }}
 .foto-px {{ position:absolute; border:12px solid {PAPEL}; box-shadow:0 0 0 6px #111, 12px 12px 0 6px #111; background:#111; }}
 .foto-px img {{ display:block; width:100%; image-rendering:pixelated; }}
 .foto-px .leg-f {{ position:absolute; left:-12px; right:-12px; top:100%; margin-top:18px; background:{PAPEL}; color:{FUNDO}; font:400 26px/1.3 Pixel2; padding:8px 14px; text-transform:uppercase; }}
-.balao-px {{ position:absolute; left:90px; right:90px; background:{PAPEL}; color:{FUNDO}; font:400 40px/1.35 Pixel2; padding:30px 34px; box-shadow:10px 10px 0 #111; }}
+.balao-px {{ position:absolute; left:90px; right:150px; background:{PAPEL}; color:{FUNDO}; font:400 40px/1.35 Pixel2; padding:30px 34px; box-shadow:10px 10px 0 #111; }}
 .balao-px small {{ display:block; margin-top:14px; font:400 22px Pixel2; color:#555; }}
-.item-px {{ position:absolute; left:90px; right:90px; background:#38383e; border:6px solid {PAPEL}; padding:16px 22px; box-shadow:8px 8px 0 #111; opacity:0; }}
+.item-px {{ position:absolute; left:90px; right:150px; background:#38383e; border:6px solid {PAPEL}; padding:16px 22px; box-shadow:8px 8px 0 #111; opacity:0; }}
 .item-px .q {{ font:400 30px/1.3 Pixel2; color:{PAPEL}; }}
 .item-px .a {{ font:400 34px/1.3 Pixel; color:{AMARELO}; margin-top:8px; text-transform:uppercase; }}
 .item-px .f {{ font:400 18px Pixel2; color:{VERDE}; margin-top:6px; text-transform:uppercase; }}
@@ -259,7 +259,7 @@ def cenas(x):
                     h.append(f'<div class="sub-px" id="d{k}" style="top:{min(y + 30, 1300)}px; opacity:0">{esc(cena["detalhe"])}</div>')
                     jk += f'tl.to("#d{k}", {{ opacity: 1, duration: 0.17 }}, {x.bate(L, None, 0.5):.3f});\n'
             if cena.get("ressalva"):
-                h.append(f'<div class="sub-px" style="top:1340px; font-size:28px; color:{AMARELO}">{esc(cena["ressalva"])}</div>')
+                h.append(f'<div class="sub-px" style="top:1300px; font-size:28px; color:{AMARELO}">{esc(cena["ressalva"])}</div>')
             if cena.get("fonte"):
                 h.append(f'<div class="fonte-px">FONTE: {esc(cena["fonte"])}</div>')
         c.append(f'<div class="cena-px" id="c{k}">' + "".join(h) + '</div>')
@@ -270,6 +270,6 @@ def cenas(x):
     if x.assinatura():
         c.append(f'<div class="fim-ass" id="ass">{x.assinatura()}</div>'); js += f'tl.to("#ass", {{ opacity: 1, duration: 0.3 }}, {fim + 0.5:.3f});\n'
     leg, ljs = x.legenda(f"font:400 36px/1.4 Pixel2; color:{PAPEL};", AMARELO, "background:rgba(0,0,0,.55); padding:4px 12px; box-decoration-break:clone; -webkit-box-decoration-break:clone",
-                         topo=1560, extra_css="z-index:50", pular={ult})
+                         topo=1445, extra_css="z-index:50", pular={ult})
     c.append(leg); js += ljs
     return c, js
