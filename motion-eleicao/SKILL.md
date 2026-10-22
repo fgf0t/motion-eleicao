@@ -280,6 +280,10 @@ dela do Freesound: `python3 SKILL/scripts/baixar_sons.py "whoosh fast" whoosh` (
 
 Exemplos completos de cada estilo: `SKILL/exemplos/`.
 
+**Mexer em animação**: antes de escrever ou mudar qualquer movimento em código (efeito novo num `estilo.py`, câmera,
+transição, estilo novo que precise de mais que o `config.json`), leia `SKILL/estilos/_base/MOVIMENTO.md`: pra quê
+animar, só transform e opacidade, qual curva e quanto tempo, uma coisa de cada vez.
+
 ## Estilo novo a partir de referências
 
 Quando a pessoa mandar referências (links de Pinterest, Instagram, YouTube, imagens, prints ou um vídeo) e pedir um
@@ -295,6 +299,7 @@ nem o @ de quem fez a referência.
    o bloco `_opcoes` explica o que cada valor faz; use só esses valores. A paleta automática pode errar (uma cor forte
    que ocupa pouco espaço, como um amarelo de tarja, às vezes fica de fora): confira olhando a folha e corrija.
    Pra colagem, use `"fonte_titulo": "Recortada"`, `"camadas"` (retalhos, amassado, formas, tarjas) e `"foto": {"modo": "tiras"}`.
+   Se a referência pede um movimento que as opções não têm e você for escrever código, siga `SKILL/estilos/_base/MOVIMENTO.md`.
 4. Preencha `SKILL/estilos/<nome>/sobre.json`: `titulo`, `quando` (quando usar) e `descricao` (1 frase). Deixe
    `"status": "rascunho"`.
 5. Rode `python3 SKILL/scripts/estilos.py testar <nome>`: renderiza um teste de uns 15 s (`teste.mp4`) e o quadro
